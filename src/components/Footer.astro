@@ -1,0 +1,86 @@
+---
+import { Leaflet, Circle, Popup } from "astro-leaflet";
+import { Icon } from 'astro-icon/components'
+
+// 50°16'18.4"N 18°53'14.1"E
+---
+
+<footer>
+    <div>
+        <h3>Tu dojadę: </h3>
+        <Leaflet id="Leaflet" options={{
+            tileLayer: 'https://{s}.google.com/vt/lyrs=y&hl=pl&x={x}&y={y}&z={z}',
+            tileLayerOptions: {
+                subdomains: [ 'mt0', 'mt1', 'mt2', 'mt3' ],
+                attribution: 'Map data &copy; Google',
+            },
+            
+            center: [50.27186752, 18.88749920],
+            zoom: 9,
+            
+        }}>
+            <Circle latlng={[50.27186752, 18.88749920]}, options={{
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: 10000
+            }}>
+                <Popup content="Tutaj możemy się spotkać" />
+            </Circle>
+        </Leaflet>
+    </div>
+    <nav>
+        <div class="linki">
+            <a href="">Strona główna</a>
+            <a href="">O mnie</a>
+            <a href="">Oferta</a>
+            <a href="">Sklep</a>
+        </div>
+        <div class="linki">
+            <a href="">Polityka prywatności</a>
+            <a href="">Regulamin</a>
+        </div>
+        <div class="linki">
+            <span>Kontakt</span>
+            <a href=""> <Icon name="mdi:phone" /> 570 622 745</a>
+            <a href=""> <Icon name="mdi:email" /> zocha.lubi@gmail.com</a>
+            <a href=""> <Icon name="mdi:location" /> Ruda Śląska</a>
+            <a href=""> <Icon name="mdi:factory" /> NIP: 12 34 567 890</a>
+        </div>
+    </nav>
+</footer>
+
+<style>
+    footer {
+        background-color: aliceblue;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 3rem;
+        padding: 1rem;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    a:hover {
+    filter: drop-shadow(3px 3px 3px grey);
+    }
+    #Leaflet {
+        width: 25rem;
+        height: 25rem;
+        align-self: center;
+    }
+    nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .linki {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+</style>

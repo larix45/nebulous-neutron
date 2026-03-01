@@ -1,0 +1,87 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<section>
+    <div id="controls">
+        <Icon name="mdi:chevron-left" color={"white"} size={64}/>
+        <div id="card_opinie">
+            <h4></h4>
+            <p></p>
+        </div>
+        <Icon name="mdi:chevron-right" color={"white"} size={64}/>
+    </div>
+    <div id="slide-status">
+        <Icon name="mdi:circle" color={"white"}/>
+        <Icon name="mdi:circle-outline" color={"white"}/>
+        <Icon name="mdi:circle-outline" color={"white"}/>
+        <Icon name="mdi:circle-outline" color={"white"}/>
+    </div>
+</section>
+
+<script defer>
+        let opinie = [
+            {
+                tresc: "polecam",
+                autor: "Kamil Warczek",
+                gwiazdki: 5,
+            },
+            {
+                tresc: "najlepsza ever",
+                autor: "Jan Kowalski",
+                gwiazdki: 3,
+            },
+        ];
+        function display()
+        {
+            document.querySelector("#card_opinie h4").innerText = opinie[index].autor;
+            document.querySelector("#card_opinie p").innerText = opinie[index].tresc;
+            let status = "";
+            let empty = "<Icon name='mdi:circle' color={'white'}/>";
+        }
+        let index = 0;
+        function next()
+        {
+            index++;
+            if(index >= opinie.length)
+                index = 0;
+            display();
+        }
+        function pervious()
+        {
+            index--;
+            if(index < 0)
+                index = opinie.length;
+            display();
+        }
+        display();
+</script>
+
+<style>
+    section {
+        min-height: 30rem;
+        background-color: rgb(0, 18, 55);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.8rem;
+    }
+    #slide-status {
+
+    }
+    #controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    #card_opinie {
+        background-color: rgb(9, 31, 75);
+        color: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        max-width: 50%;
+        min-height: 14rem;
+    }
+</style>

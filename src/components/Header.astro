@@ -1,0 +1,102 @@
+---
+import logo from '../assets/logo.png'
+import { Icon } from 'astro-icon/components'
+---
+
+
+<header id="back">
+    <script defer>
+        function toggle_menu()
+        {
+            if(document.getElementsByTagName("nav")[0].style.display == "none")
+                document.getElementsByTagName("nav")[0].style.display = "flex";
+            else
+                document.getElementsByTagName("nav")[0].style.display = "none";
+        }
+    </script>
+    
+    <div id="logo_i_tytul">
+        <img src={logo.src} alt="Logo psie talarki">
+        <h1>Pieski Talarka</h1>
+    </div>
+    <Icon id="hamburger" onclick="toggle_menu()" name="mdi:hamburger" size="48"/>
+    <nav>
+        <a href="">Start</a>
+        <a href="">O mnie</a>
+        <a href="">Oferta</a>
+        <a href="">Sklep</a>
+        <a href="">Kontakt</a>
+    </nav>
+</header>
+
+
+<style>
+
+
+#back {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+#logo_i_tytul
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+img {
+    aspect-ratio: 1;
+    height: 5rem;
+}
+nav {
+    display: flex;
+    gap: 1rem;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+}
+a:hover {
+    filter: drop-shadow(3px 3px 3px grey);
+}
+#hamburger {
+    display: none;
+    border: 0px;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    nav {
+        position: fixed;
+        right: 10px;
+        flex-direction: column;
+        background-color: aliceblue;
+        gap: 3rem;
+        top: 5.5rem;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        filter: drop-shadow(1px 1px 3px greay);
+        display: none;
+    }
+
+    #hamburger {
+        display: block;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+</style>

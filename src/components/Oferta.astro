@@ -1,0 +1,97 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<section>
+    <h2>Oferta</h2>
+    <ul>
+        <li>
+            <Icon name="mdi:asterisk" />
+            <h4>Konsultacje behawioralne</h4> 
+            <p>dzięki szczegółowemu wywiadu i obserwacji na 
+                żywo szukam przyczyny zachowań niepożądanych a 
+                następnie opracowuję plan terapii. Twój pies reaguje 
+                agresją na inne psy lub ludzi? A może niszczy wszystko 
+                co napotka na swojej drodze? Razem to ogarniemy.
+            </p>
+        </li>
+        <li>
+            <Icon name="mdi:asterisk" />
+            <h4>Spacery socjalizacyjne 1:1</h4> 
+            <p>
+                odbywają się z innym psem, gdzie omawiamy 
+                wysyłane sygnały, używane strategie i podnosimy 
+                ich kompetencje społeczne. 
+            </p>
+        </li>
+        <li>
+            <Icon name="mdi:asterisk" />
+            <h4>Spacery behawioralne</h4> 
+            <p>
+                są indywidualnym spotkaniem z Tobą i Twoim
+                psem, na którym omawiamy problemy z jakimi
+                się borykacie i od razu pracujemy nad 
+                ich rozwiązaniem.
+            </p>
+        </li>
+        <li>
+            <Icon name="mdi:asterisk" />
+            <h4>Trening kooperacyjny</h4> 
+            <p>
+                indywidualny trening, który ma za zadanie
+                nauczyć cię rozmowy z psem. Dotyczy przyzwyczajania 
+                psa np. do czesania, mycia zębów, zakładania szelek, 
+                wprowadzeniu kagańca, klatki kennelowej, obcinania 
+                pazurów, odwrażliwiania na dźwięki, 
+                bez stresu oraz przymusu. 
+            </p>
+        </li>
+        <li>
+            <Icon name="mdi:asterisk" />
+            <h4>Pielęgnacja psa</h4> 
+            <p>
+                wizyta SPA w salonie w Rudzie Śl. 
+                Przyjmuję psy wszelkiej maści – 
+                duże, małe, agresywne – te, które mają 
+                problemy z pielęgnacją i te, które chętnie
+                zaglądają do fryzjera.
+            </p>
+        </li>
+        <li>
+            <Icon name="mdi:asterisk" />
+            <h4>Spacery grupowe</h4> 
+            <p>
+                odbywają się w małych grupach
+                3-4 psów. Pozwalają się oswoić z innymi 
+                psami na spacerach i podnosić ich umiejętności 
+                komunikacyjne. Grupy są budowane tak, żeby 
+                każdy psiak czuł się bezpiecznie.
+            </p>
+        </li>
+    </ul>
+</section>
+
+<style>
+    section {
+        min-height: 40rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 4rem);
+
+    }
+    ul {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        width: inherit;
+        gap: 2rem;
+        align-items: baseline;
+        justify-content: center;
+    }
+    li {
+        list-style-type: none;
+        word-wrap: normal;
+        font-size: large;
+    }
+</style>
