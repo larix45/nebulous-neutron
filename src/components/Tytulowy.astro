@@ -1,60 +1,69 @@
 ---
-import zofiaIBari from '../assets/zInuNaRekach.png'
-import bari from '../assets/bari.jpg'
+import zofiaIBari from '../assets/zInuNaRekach.png';
+import bari from '../assets/bari.jpg';
 import Image from 'astro/components/Image.astro';
-var zdjurl = zofiaIBari.src;
+
+
 ---
 
 <section>
-    <div id="image2">
+    <img id="image2" alt={bari.format} src={bari.src}>
     <img id="image" alt={zofiaIBari.format} src={zofiaIBari.src}/>
     <div id="card">
-        <h2>Jestem Zofia</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsa a voluptatibus, optio enim sequi voluptatum quae provident. Sint quidem unde aspernatur quam autem maiores obcaecati ab cum, nemo illum.</p>
-        <button>Skontaktuj się za mną</button>
+        <h2>Cześć, miło cię widzieć!</h2>
+        <p>Nazywam się Zofia Talarczyk i jestem certyfikowaną trenerką i behawiorystką psów. 
+            Już od 2021 roku aktywnie dzielę się wiedzą dotyczącą psów w mediach społecznościowych,
+            a swoją praktyką sięgam od 2019 roku. Wiedza, jaką zdobyłam ucząc się na technika
+            weterynarii (a później pracy w lecznicach) pozwala mi podejść do przyczyn zachowania
+            nie tylko ze względu na zachowanie, ale również na zdrowie i ogólny dobrostan. 
+            Aktualnie najwięcej czasu spędzam ucząc opiekunów jak rozmawiać ze swoimi psami oraz 
+            zajmując się czworonogami na stole groomerskim. 
+        W pracy behawiorysty największą uwagę przykładam do zaspokajania potrzeb Naszych czworonożnych
+         przyjaciół oraz budowaniu poczucia bezpieczeństwa tak, żeby pies robił coś,
+         bo ufa swojemu przewodnikowi, a nie dlatego, że się go boi. </p>
+        <p>Odezwij się do mnie i zobacz, jak mogę Tobie pomóc!</p>        
+        <button>OFERTA</button>
     </div>
 </section>
 
-<style define:vars={{zdjurl}}>
+<style>
+    p {
+        font-size: small;
+    }
     #image {
-        bottom: 0rem;
         max-height: 100%;
-        aspect-ratio: 1;
+        width: auto;
         position: absolute;
         right: 1rem;        
+        bottom: 0rem;
+
     }
-    #image2 {
-        background-image: url(var(--zdjurl)); /* Replace with your image path */
-        background-position: center center; /* Center horizontally & vertically */
-        background-repeat: no-repeat;       /* Prevent tiling */
-        background-size: cover;             /* Fill container, zoom if needed */
-        background-attachment: fixed;       /* Optional: parallax-like effect */
+    #image2 {      
         filter:blur(1px) contrast(0.8) brightness(0.425);
-        display:block;
-        height: 30rem;
+        height: 100%;
         width: 100%;
+        object-fit: cover;
     }
     section {
-        max-height: 40rem;
-        display: flex;
-        justify-content: center;
+        height: clamp(30rem, 80dvh, 60rem);
+        width: 100%;
+        position: relative;
         background-color: cadetblue;
+        filter:drop-shadow(1px 1px 3px grey);
     }
     #card {
         position: absolute;
-        top: 1rem;
-        left: 1rem;
+        top: 3rem;
+        left: clamp(1rem, 8vw, 20rem);
         background-color: rgb(65, 104, 21);
         border-radius: 0.5rem;
         padding: 1rem;
         filter: drop-shadow(1px 1px 4px grey) opacity(0.9);
-        width: 40%;
-        height: 45%;
+        width: clamp(25rem, 40%, 50rem);
         max-width: 40rem;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        position:absolute;
+        /* gap: 1rem; */
     }
     button {
         border: 0px;
@@ -65,9 +74,9 @@ var zdjurl = zofiaIBari.src;
         filter: drop-shadow(0.1px 0.1px 3px grey);
         max-width: 15rem;
         font-size: larger;
-        position: absolute;
-        bottom: 2rem;
-        right: 2rem;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
     button:hover {
         filter: drop-shadow(1px 1px 3px grey)  saturate(0.8);
