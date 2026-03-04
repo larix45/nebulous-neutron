@@ -1,13 +1,29 @@
 ---
 import { Icon } from "astro-icon/components"
+import { ciemny_braz, jasnoszary } from "./kolorki.mjs"
+import { Carousel } from 'webcoreui/astro'
+
+
 ---
 
 <section>
+    <Carousel items={3} pagination={{ type: 'dots' }}>
+        <li><Box>1</Box></li>
+        <li><Box>2</Box></li>
+        <li><Box>3</Box></li>
+    </Carousel>
     <div id="controls">
-        <Icon name="mdi:chevron-left" color={"white"} size={64}/>
+        <Icon name="mdi:chevron-left" onclick="previous()" color={"white"} size={64}/>
         <div id="card_opinie">
-            <h4></h4>
             <p></p>
+            <h4></h4>
+            <div>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+            </div>
         </div>
         <Icon name="mdi:chevron-right" color={"white"} size={64}/>
     </div>
@@ -20,16 +36,22 @@ import { Icon } from "astro-icon/components"
 </section>
 
 <script defer>
+    import Splide from "@splidejs/splide";
+
+    var splide = new Splide( '.splide' );
+    splide.mount();
         let opinie = [
             {
-                tresc: "polecam",
-                autor: "Kamil Warczek",
-                gwiazdki: 5,
+                tresc: "Zosia nie wciska jednego schematu każdemu. Patrzy na konkretnego psa, jego emocje, historię, temperament i dopiero wtedy dobiera rozwiązania. Widać, że dobro psa jest dla niej absolutnym priorytetem, a nie szybki „efekt wow” pod Instagrama. Uczy, jak czytać sygnały psa, jak szanować jego granice i jak budować relację, a nie tylko posłuszeństwo. Zosia to behawiorystka z topki. Mądra, świadoma, ciepła, a przy tym konkretna i skuteczna. Jeśli ktoś chce naprawdę zrozumieć swojego psa i przestać działać metodą prób i błędów – to jest właściwy adres. 10/10, polecam bez zawahania!",
+                autor: "Julia",
             },
             {
                 tresc: "najlepsza ever",
                 autor: "Jan Kowalski",
-                gwiazdki: 3,
+            },
+            {
+                tresc: "najlepsza ever",
+                autor: "Jan Kowalski",
             },
         ];
         function display()
@@ -47,20 +69,21 @@ import { Icon } from "astro-icon/components"
                 index = 0;
             display();
         }
-        function pervious()
+        function previous()
         {
             index--;
             if(index < 0)
                 index = opinie.length;
             display();
+            document.getElementById("card_opinie").style.translate = "100px";
         }
         display();
 </script>
 
-<style>
+<style define:vars={{ciemny_braz, jasnoszary}}>
     section {
         min-height: 30rem;
-        background-color: rgb(0, 18, 55);
+        background-color: var(--ciemny_braz);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -77,11 +100,16 @@ import { Icon } from "astro-icon/components"
         justify-content: center;
     }
     #card_opinie {
-        background-color: rgb(9, 31, 75);
-        color: white;
-        padding: 2rem;
+        background-color: var(--jasnoszary);
+        color: rgb(0, 0, 0);
+        padding: 1rem;
         border-radius: 0.5rem;
-        max-width: 50%;
+        max-width: clamp(20rem, 50%, 40rem);
         min-height: 14rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 2rem;
     }
 </style>

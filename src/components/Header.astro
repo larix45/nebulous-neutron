@@ -8,30 +8,53 @@ import { Icon } from 'astro-icon/components'
     <script defer>
         function toggle_menu()
         {
-            if(document.getElementsByTagName("nav")[0].style.display == "none")
-                document.getElementsByTagName("nav")[0].style.display = "flex";
+            if(document.getElementsByTagName("nav")[0].classList.contains("visible"))
+                document.getElementsByTagName("nav")[0].classList.remove("visible");
             else
-                document.getElementsByTagName("nav")[0].style.display = "none";
+                document.getElementsByTagName("nav")[0].classList.add("visible");
         }
     </script>
     
     <div id="logo_i_tytul">
         <img src={logo.src} alt="Logo psie talarki">
-        <h1>Pieski Talarka</h1>
+        <h1>Pjeski Talarka</h1>
     </div>
-    <Icon id="hamburger" onclick="toggle_menu()" name="mdi:hamburger" size="48"/>
-    <nav>
+    <Icon id="hamburger" onclick="toggle_menu()" name="mdi:menu" size="48"/>
+    <nav class="visible">
         <a href="">Start</a>
         <a href="">O mnie</a>
         <a href="">Oferta</a>
         <a href="">Sklep</a>
         <a href="">Kontakt</a>
+        <div class="social">
+            <a href="https://facebook.com">
+                <Icon id="facebook" name="mdi:facebook" size="24"/>
+            </a>
+            <a href="https://instagram.com">
+                <Icon id="instagram" name="mdi:instagram"  size="24"/>
+            </a>
+        </div>
     </nav>
 </header>
 
+<style is:global>
+#instagram {
+    color: white;
+    border-radius: 0.45rem;
+    background: linear-gradient(45deg, #405de6, #5851db, #883ab4, #c13584, #e1306c, #fd1d1d);
+}
+#facebook {
+    color: #405de6;
+    /* background: linear-gradient(45deg, #405de6, #5851db, #883ab4, #c13584, #e1306c, #fd1d1d); */
+}
+</style>
 
 <style>
 
+.social {
+    display: flex;
+    gap: 1rem;
+}
 
 #back {
     background-color: aliceblue;
@@ -42,6 +65,9 @@ import { Icon } from 'astro-icon/components'
     width: 100%;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
+    position: sticky;
+    top: 0px;
+    z-index: 4;
 }
 #logo_i_tytul
 {
@@ -57,6 +83,7 @@ img {
 nav {
     display: flex;
     gap: 1rem;
+    align-items: center;
 }
 #hamburger {
     display: none;
@@ -64,10 +91,13 @@ nav {
     background-color: inherit;
     cursor: pointer;
 }
+h1 {
+    font-size: clamp(0.9rem, 2dvw, 1.6rem);
+}
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
     nav {
         position: fixed;
         right: 10px;
@@ -78,17 +108,26 @@ nav {
         padding: 2rem;
         border-radius: 0.5rem;
         filter: drop-shadow(1px 1px 3px greay);
-        display: none;
+        /* display: none; */
+        transition: 0.1s;
+        translate: 0px 20px;
+        opacity: 1;
     }
-
+    
     #hamburger {
         display: block;
     }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
+    a {
+        width: 100%;
+        font-size: 1.4rem;
+    }
+    nav.visible {
+        translate: 100px;
+        opacity: 0;
+    }
+    .social {
+        font-size: 6rem;
+    }
 }
 
 </style>

@@ -16,18 +16,26 @@ import { Icon } from 'astro-icon/components'
             },
             
             center: [50.27186752, 18.88749920],
-            zoom: 9,
+            zoom: 10,
             
         }}>
             <Circle latlng={[50.27186752, 18.88749920]}, options={{
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5,
-                radius: 10000
+                radius: 16000
             }}>
                 <Popup content="Tutaj możemy się spotkać" />
             </Circle>
         </Leaflet>
+        <div class="social">
+            <a href="https://facebook.com">
+                <Icon id="facebook" name="mdi:facebook" size="48"/>
+            </a>
+            <a href="https://instagram.com">
+                <Icon id="instagram" name="mdi:instagram"  size="48"/>
+            </a>
+        </div>
     </div>
     <nav>
         <div class="linki">
@@ -44,13 +52,30 @@ import { Icon } from 'astro-icon/components'
             <span>Kontakt</span>
             <a href=""> <Icon name="mdi:phone" /> 570 622 745</a>
             <a href=""> <Icon name="mdi:email" /> zocha.lubi@gmail.com</a>
-            <a href=""> <Icon name="mdi:location" /> Ruda Śląska</a>
             <a href=""> <Icon name="mdi:factory" /> NIP: 12 34 567 890</a>
+            <a href=""> <Icon name="mdi:location" /> Ruda Śląska</a>
         </div>
     </nav>
 </footer>
 
 <style>
+    .social {
+        position: relative;
+        bottom: calc(48px + 3rem);
+        left: 1rem;
+        z-index: 999;
+        display: flex;
+        gap: 1.4rem;
+        background-color: aliceblue;
+        width: fit-content;
+        padding: 0.7rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5rem;
+    }
+    span {
+        font-size: larger;
+    }
     footer {
         background-color: aliceblue;
         display: flex;
