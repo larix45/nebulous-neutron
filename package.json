@@ -10,9 +10,13 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^6.6.4",
+    "@fontsource/roboto": "^5.2.10",
     "@iconify-json/mdi": "^1.2.3",
     "astro": "^5.17.1",
     "astro-icon": "^1.1.5",
-    "astro-leaflet": "^1.10.0"
+    "astro-leaflet": "^1.10.0",
+    "sass": "^1.97.3",
+    "typescript": "^5.9.3",
+    "webcoreui": "^1.4.0"
   }
 }

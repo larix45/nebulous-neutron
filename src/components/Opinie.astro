@@ -1,20 +1,28 @@
 ---
 import { Icon } from "astro-icon/components"
 import { ciemny_braz, jasnoszary } from "./kolorki.mjs"
-import { Carousel } from 'webcoreui/astro'
+import { Carousel } from 'webcoreui/astro';
 
 
 ---
 
 <section>
-    <Carousel items={3} pagination={{ type: 'dots' }}>
-        <li><Box>1</Box></li>
-        <li><Box>2</Box></li>
-        <li><Box>3</Box></li>
-    </Carousel>
-    <div id="controls">
-        <Icon name="mdi:chevron-left" onclick="previous()" color={"white"} size={64}/>
-        <div id="card_opinie">
+    <Carousel items={3} pagination={{ type: 'dots' }} debounce={0}>
+        <li>
+            <div id="card_opinie">
+            <p>Zosia nie wciska jednego schematu każdemu. Patrzy na konkretnego psa, jego emocje, historię, temperament i dopiero wtedy dobiera rozwiązania. Widać, że dobro psa jest dla niej absolutnym priorytetem, a nie szybki „efekt wow” pod Instagrama. Uczy, jak czytać sygnały psa, jak szanować jego granice i jak budować relację, a nie tylko posłuszeństwo. Zosia to behawiorystka z topki. Mądra, świadoma, ciepła, a przy tym konkretna i skuteczna. Jeśli ktoś chce naprawdę zrozumieć swojego psa i przestać działać metodą prób i błędów – to jest właściwy adres. 10/10, polecam bez zawahania!</p>
+            <h4>Julia</h4>
+            <div>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+            </div>
+         </div>
+        </li>
+        <li>
+            <div id="card_opinie">
             <p></p>
             <h4></h4>
             <div>
@@ -24,22 +32,26 @@ import { Carousel } from 'webcoreui/astro'
                 <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
                 <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
             </div>
-        </div>
-        <Icon name="mdi:chevron-right" color={"white"} size={64}/>
-    </div>
-    <div id="slide-status">
-        <Icon name="mdi:circle" color={"white"}/>
-        <Icon name="mdi:circle-outline" color={"white"}/>
-        <Icon name="mdi:circle-outline" color={"white"}/>
-        <Icon name="mdi:circle-outline" color={"white"}/>
-    </div>
+         </div>
+        </li>
+        <li>
+            <div id="card_opinie">
+            <p></p>
+            <h4></h4>
+            <div>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+            </div>
+         </div>
+        </li>
+        
+    </Carousel>
 </section>
-
+<!-- 
 <script defer>
-    import Splide from "@splidejs/splide";
-
-    var splide = new Splide( '.splide' );
-    splide.mount();
         let opinie = [
             {
                 tresc: "Zosia nie wciska jednego schematu każdemu. Patrzy na konkretnego psa, jego emocje, historię, temperament i dopiero wtedy dobiera rozwiązania. Widać, że dobro psa jest dla niej absolutnym priorytetem, a nie szybki „efekt wow” pod Instagrama. Uczy, jak czytać sygnały psa, jak szanować jego granice i jak budować relację, a nie tylko posłuszeństwo. Zosia to behawiorystka z topki. Mądra, świadoma, ciepła, a przy tym konkretna i skuteczna. Jeśli ktoś chce naprawdę zrozumieć swojego psa i przestać działać metodą prób i błędów – to jest właściwy adres. 10/10, polecam bez zawahania!",
@@ -78,9 +90,13 @@ import { Carousel } from 'webcoreui/astro'
             document.getElementById("card_opinie").style.translate = "100px";
         }
         display();
-</script>
+</script> -->
 
 <style define:vars={{ciemny_braz, jasnoszary}}>
+    .slide {
+        width: 100%;
+        color: aliceblue;
+    }
     section {
         min-height: 30rem;
         background-color: var(--ciemny_braz);

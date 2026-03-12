@@ -2,7 +2,7 @@
 import zofiaIBari from '../assets/zInuNaRekach.png';
 import bari from '../assets/bari.jpg';
 import Image from 'astro/components/Image.astro';
-
+import { ciemny_braz } from './kolorki.mjs';
 
 ---
 
@@ -26,7 +26,7 @@ import Image from 'astro/components/Image.astro';
     </div>
 </section>
 
-<style>
+<style define:vars={{ciemny_braz}}>
     p {
         font-size: clamp(0.9rem, 1vw, 1.3rem);
     }
@@ -56,7 +56,8 @@ import Image from 'astro/components/Image.astro';
         position: absolute;
         top: 3rem;
         left: clamp(1rem, 8vw, 20rem);
-        background-color: rgb(65, 104, 21);
+        background-color: var(--ciemny_braz);
+        color: rgb(213, 213, 213);
         border-radius: 0.5rem;
         padding: 1rem;
         filter: drop-shadow(1px 1px 4px grey) opacity(0.9);
@@ -71,10 +72,10 @@ import Image from 'astro/components/Image.astro';
     button {
         border: 0px;
         color: whitesmoke;
-        background-color: darkcyan;
+        background-color: rgb(72, 80, 0);
         padding: 1rem;
         border-radius: 0.5rem;
-        filter: drop-shadow(0.1px 0.1px 3px grey);
+        filter: drop-shadow(0.1px 0.1px 3px rgb(38, 47, 0));
         max-width: 15rem;
         font-size: larger;
         position: relative;

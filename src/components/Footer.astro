@@ -1,12 +1,12 @@
 ---
-import { Leaflet, Circle, Popup } from "astro-leaflet";
+import { Leaflet, Circle, Popup, Polygon } from "astro-leaflet";
 import { Icon } from 'astro-icon/components'
 
 // 50°16'18.4"N 18°53'14.1"E
 ---
 
 <footer>
-    <div>
+    <div class="mapa_i_socjale">
         <h3>Tu dojadę: </h3>
         <Leaflet id="Leaflet" options={{
             tileLayer: 'https://{s}.google.com/vt/lyrs=y&hl=pl&x={x}&y={y}&z={z}',
@@ -16,53 +16,180 @@ import { Icon } from 'astro-icon/components'
             },
             
             center: [50.27186752, 18.88749920],
-            zoom: 10,
+            zoom: 9,
             
         }}>
-            <Circle latlng={[50.27186752, 18.88749920]}, options={{
-                color: 'red',
-                fillColor: '#f03',
-                fillOpacity: 0.5,
-                radius: 16000
-            }}>
-                <Popup content="Tutaj możemy się spotkać" />
-            </Circle>
+        <Circle latlng={[
+      50.2719418642467,
+      18.88700063184565
+    ]} 
+    options={{
+        color: 'red',
+        fillColor: '#f00',
+        fillOpacity: 0.5,
+        radius: 8600
+    }}> 
+        <Popup content="Tutaj możemy się spotkać" />
+    </Circle>
+            <Polygon latlngs={[
+      [
+        49.991025680207265,
+        18.698981474848708
+      ],
+      [
+        50.0157405047444,
+        18.77861451263522
+      ],
+      [
+        50.03685573785991,
+        18.81957638685883
+      ],
+      [
+        50.11177210242299,
+        18.91708035657374
+      ],
+      [
+        50.04749803842301,
+        18.995545891432883
+      ],
+      [
+        50.054552416249294,
+        19.102638597421624
+      ],
+      [
+        50.10390402902086,
+        19.174033734747432
+      ],
+      [
+        50.15050636899788,
+        19.377101778651276
+      ],
+      [
+        50.26921303270536,
+        19.31956997621929
+      ],
+      [
+        50.37793360313583,
+        19.377235279443976
+      ],
+      [
+        50.4182021985957,
+        19.26465063981481
+      ],
+      [
+        50.433950163906005,
+        19.08616279650026
+      ],
+      [
+        50.458436590291065,
+        18.904928986365498
+      ],
+      [
+        50.43220064859511,
+        18.7319330766914
+      ],
+      [
+        50.3656711532215,
+        18.68250567392738
+      ],
+      [
+        50.3463951856521,
+        18.578158934758882
+      ],
+      [
+        50.31658965780074,
+        18.479304129230837
+      ],
+      [
+        50.26043440637521,
+        18.47381219559038
+      ],
+      [
+        50.24638523853016,
+        18.54246136609598
+      ],
+      [
+        50.188388626869845,
+        18.55893716701731
+      ],
+      [
+        50.15672439072853,
+        18.50401783061283
+      ],
+      [
+        50.096856908877875,
+        18.454590427848807
+      ],
+      [
+        50.02985755690771,
+        18.534223465635275
+      ],
+      [
+        49.994557147398986,
+        18.611110536601576
+      ]
+    ]}></Polygon> 
+            <Popup content="Tutaj możemy się spotkać" />
+                
+            </Polygon>
+            
         </Leaflet>
-        <div class="social">
-            <a href="https://facebook.com">
-                <Icon id="facebook" name="mdi:facebook" size="48"/>
-            </a>
-            <a href="https://instagram.com">
-                <Icon id="instagram" name="mdi:instagram"  size="48"/>
-            </a>
-        </div>
     </div>
     <nav>
         <div class="linki">
+            <span class="info">Ważne</span>
             <a href="">Strona główna</a>
             <a href="">O mnie</a>
             <a href="">Oferta</a>
             <a href="">Sklep</a>
         </div>
         <div class="linki">
+            <span class="info">Przydatne linki</span>
             <a href="">Polityka prywatności</a>
-            <a href="">Regulamin</a>
+            <a href="">Regulaminy</a>
+            <div class="social">
+                <a href="https://www.facebook.com/profile.php?id=61579532473491">
+                    <Icon id="facebook" name="mdi:facebook" size="32"/>
+                </a>
+                <a href="https://instagram.com/pjeski_talarka_/">
+                    <Icon id="instagram" name="mdi:instagram"  size="27"/>
+                </a>
+            </div>
         </div>
         <div class="linki">
-            <span>Kontakt</span>
+            <span class="info">Kontakt</span>
             <a href=""> <Icon name="mdi:phone" /> 570 622 745</a>
             <a href=""> <Icon name="mdi:email" /> zocha.lubi@gmail.com</a>
             <a href=""> <Icon name="mdi:factory" /> NIP: 12 34 567 890</a>
             <a href=""> <Icon name="mdi:location" /> Ruda Śląska</a>
         </div>
     </nav>
-</footer>
+</footer><Circle latlng={[
+      50.2719418642467,
+      18.88700063184565
+    ]} 
+    options={{
+        color: 'red',
+        fillColor: '#f00',
+        fillOpacity: 0.5,
+        radius: 1000
+    }}> 
+        <Popup content="Tutaj możemy się spotkać" />
+    </Circle>
 
 <style>
+    div.mapa_i_socjale {
+        display: flex;
+        flex-direction: column;
+    }
+    span.info {
+        font-weight: 999;
+        font-size: x-large;
+    }
     .social {
         position: relative;
-        bottom: calc(48px + 3rem);
-        left: 1rem;
+        left: -1rem;
+        top: -1rem;
         z-index: 999;
         display: flex;
         gap: 1.4rem;
