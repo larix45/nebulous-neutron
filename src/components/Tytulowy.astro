@@ -45,7 +45,7 @@ import Image from 'astro/components/Image.astro';
         object-fit: cover;
     }
     section {
-        height: clamp(30rem, 90dvh, 100rem);
+        height: clamp(30rem, fit-content, 100rem);
         width: 100%;
         position: relative;
         background-color: rgb(9, 118, 102);
@@ -85,17 +85,22 @@ import Image from 'astro/components/Image.astro';
 
     @media screen and (max-width: 950px) {
         #image {
-            right: 2rem;
+            right: 20%;
+        }
+        section {
+            height: 34rem;
+        }
+        #card {
+            width: 70%;
         }
     }
     @media screen and (max-width: 600px) {
         #image {
-            left: 0;
+            align-self: center;
             max-width: 100%;
             height: auto;
         }
         #card {
-            width: calc(100% - 2rem - 8dvh);
             filter: drop-shadow(1px 1px 4px var(--color-shadow)) opacity(0.95);
             display: block;
             position: absolute;
@@ -103,10 +108,22 @@ import Image from 'astro/components/Image.astro';
             top: auto;
         }
         section {
-            height: 100dvh;
             align-items:end;
             justify-content: flex-end;
             display: flex;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        button {
+            font-size: small;
+        }
+        p {
+            font-size: smaller;
+        }
+        #card {
+            max-height: 100%;
+            overflow-y: auto;
+            top: 5rem
         }
     }
 </style>
