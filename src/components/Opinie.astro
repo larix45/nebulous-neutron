@@ -1,101 +1,195 @@
 ---
-import { Icon } from "astro-icon/components"
-import { ciemny_braz, jasnoszary } from "./kolorki.mjs"
-import { Carousel } from 'webcoreui/astro';
-
-
+import { Icon } from "astro-icon/components";
+import { ciemny_braz, jasnoszary } from "./kolorki.mjs";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 ---
 
 <section>
-    <Carousel  items={3} pagination={{ type: 'dots', showChevrons: true }} debounce={0}>
-        <li>
-            <div id="card_opinie">
-            <p>Zosia nie wciska jednego schematu każdemu. Patrzy na konkretnego psa, jego emocje, historię, temperament i dopiero wtedy dobiera rozwiązania. Widać, że dobro psa jest dla niej absolutnym priorytetem, a nie szybki „efekt wow” pod Instagrama. Uczy, jak czytać sygnały psa, jak szanować jego granice i jak budować relację, a nie tylko posłuszeństwo. Zosia to behawiorystka z topki. Mądra, świadoma, ciepła, a przy tym konkretna i skuteczna. Jeśli ktoś chce naprawdę zrozumieć swojego psa i przestać działać metodą prób i błędów – to jest właściwy adres. 10/10, polecam bez zawahania!</p>
-            <h4>Julia</h4>
-            <div>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+    <div class="swiper">
+        <h3>Co mówią o mnie inni:</h3>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div id="card_opinie">
+                    <p>
+                        Zosia nie wciska jednego schematu każdemu. Patrzy na
+                        konkretnego psa, jego emocje, historię, temperament i
+                        dopiero wtedy dobiera rozwiązania. Widać, że dobro psa
+                        jest dla niej absolutnym priorytetem, a nie szybki
+                        „efekt wow” pod Instagrama. Uczy, jak czytać sygnały
+                        psa, jak szanować jego granice i jak budować relację, a
+                        nie tylko posłuszeństwo. Zosia to behawiorystka z topki.
+                        Mądra, świadoma, ciepła, a przy tym konkretna i
+                        skuteczna. Jeśli ktoś chce naprawdę zrozumieć swojego
+                        psa i przestać działać metodą prób i błędów – to jest
+                        właściwy adres. 10/10, polecam bez zawahania!
+                    </p>
+                    <h4>Julia</h4>
+                    <div>
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                    </div>
+                </div>
             </div>
-         </div>
-        </li>
-        <li>
-            <div id="card_opinie">
-            <p></p>
-            <h4></h4>
-            <div>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+            <div class="swiper-slide">
+                <div id="card_opinie">
+                    <p>
+                        Polecam
+                    </p>
+                    <h4>Kamil</h4>
+                    <div>
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                    </div>
+                </div>
             </div>
-         </div>
-        </li>
-        <li>
-            <div id="card_opinie">
-            <p></p>
-            <h4></h4>
-            <div>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
-                <Icon name="mdi:star" color={"yellow"} size="1.2rem"/>
+            <div class="swiper-slide">
+                <div id="card_opinie">
+                    <p>
+                        [MOCK] Zosia to behawiorystka, która naprawdę widzi psa – nie tylko jego zachowanie, ale też emocje, potrzeby i historię. Każde spotkanie to masa wiedzy, ale podanej w bardzo przystępny, życzliwy sposób. Zero oceniania, zero presji, za to dużo wsparcia i realnych rozwiązań. Dzięki niej zrozumiałam, jak wiele sygnałów mój pies wysyłał, a ja je ignorowałam. Ogromny profesjonalizm i jeszcze większe serce.
+                    </p>
+                    <h4>Marek</h4>
+                    <div>
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                    </div>
+                </div>
             </div>
-         </div>
-        </li>
-        
-    </Carousel>
-</section>
-<!-- 
-<script defer>
-        let opinie = [
-            {
-                tresc: "Zosia nie wciska jednego schematu każdemu. Patrzy na konkretnego psa, jego emocje, historię, temperament i dopiero wtedy dobiera rozwiązania. Widać, że dobro psa jest dla niej absolutnym priorytetem, a nie szybki „efekt wow” pod Instagrama. Uczy, jak czytać sygnały psa, jak szanować jego granice i jak budować relację, a nie tylko posłuszeństwo. Zosia to behawiorystka z topki. Mądra, świadoma, ciepła, a przy tym konkretna i skuteczna. Jeśli ktoś chce naprawdę zrozumieć swojego psa i przestać działać metodą prób i błędów – to jest właściwy adres. 10/10, polecam bez zawahania!",
-                autor: "Julia",
-            },
-            {
-                tresc: "najlepsza ever",
-                autor: "Jan Kowalski",
-            },
-            {
-                tresc: "najlepsza ever",
-                autor: "Jan Kowalski",
-            },
-        ];
-        function display()
-        {
-            document.querySelector("#card_opinie h4").innerText = opinie[index].autor;
-            document.querySelector("#card_opinie p").innerText = opinie[index].tresc;
-            let status = "";
-            let empty = "<Icon name='mdi:circle' color={'white'}/>";
-        }
-        let index = 0;
-        function next()
-        {
-            index++;
-            if(index >= opinie.length)
-                index = 0;
-            display();
-        }
-        function previous()
-        {
-            index--;
-            if(index < 0)
-                index = opinie.length;
-            display();
-            document.getElementById("card_opinie").style.translate = "100px";
-        }
-        display();
-</script> -->
+            <div class="swiper-slide">
+                <div id="card_opinie">
+                    <p>
+                        [MOCK] To, co wyróżnia Zosię, to pełne skupienie na psie i jego dobrostanie. Nie ma tu presji, pośpiechu ani obietnic cudów. Jest za to rzetelna analiza, ogrom wiedzy i niesamowita uważność. Zosia potrafi wytłumaczyć nawet trudne rzeczy w prosty sposób, dzięki czemu człowiek zaczyna patrzeć na swojego psa zupełnie inaczej. Współpraca z nią to inwestycja w spokojne, mądre życie z psem. Polecam z całego serca.
+                    </p>
+                    <h4>Czarek</h4>
+                    <div>
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div id="card_opinie">
+                    <p>
+                        [MOCK] Zosia ma niezwykłą umiejętność łączenia wiedzy naukowej z praktycznym, empatycznym podejściem. Nie ocenia, nie narzuca, tylko prowadzi krok po kroku, tłumacząc, skąd biorą się zachowania psa i jak możemy mu pomóc. Praca z nią to ogromna ulga – wreszcie ktoś patrzy na psa jak na żywą istotę, a nie maszynę do wykonywania komend. Efekty są trwałe, bo wynikają ze zrozumienia, a nie z „szybkich trików”. Absolutna topka w swoim fachu.
+                    </p>
+                    <h4>Arek</h4>
+                    <div>
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div id="card_opinie">
+                    <p>
+                        [MOCK] Praca z Zosią to zupełnie inny poziom zrozumienia psa. Nie ma tu gotowych recept ani „magicznych sztuczek”. Zosia najpierw słucha, obserwuje i dopiero wtedy proponuje rozwiązania dopasowane do konkretnego zwierzaka. Widać ogromny szacunek do psich emocji i granic. Dzięki niej zaczęłam naprawdę widzieć, co mój pies do mnie mówi, a nie tylko reagować na zachowania. Profesjonalizm połączony z ciepłem i spokojem. Polecam każdemu, kto chce budować relację, a nie tresować.
+                    </p>
+                    <h4>Darek</h4>
+                    <div>
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                        <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<style define:vars={{ciemny_braz, jasnoszary}}>
-    .slide {
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section>
+
+<script>
+    import Swiper from "swiper";
+    import { Autoplay, Mousewheel, Navigation, Pagination } from "swiper/modules";
+
+    new Swiper(".swiper", {
+        modules: [Navigation, Pagination, Mousewheel, Autoplay],
+        loop: true,
+        centeredSlides:true,
+        slidesPerView: 1,
+        speed: 600,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: true,
+        },
+        spaceBetween: 10,
+        pagination: { el: ".swiper-pagination", clickable: true },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        grabCursor: true,
+        effect: "flip",
+        breakpoints: {
+            480: {
+                slidesPerView: 1,
+            },
+            600: {
+                slidesPerView: "auto",
+                slidesPerGroup: 1,
+                spaceBetween: 5,
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+
+        }
+    });
+</script>
+
+<style define:vars={{ ciemny_braz, jasnoszary }}>
+    .swiper {
         width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        --swiper-pagination-bullet-inactive-color: rgb(219, 219, 219);
+        --swiper-pagination-color: #fff;
+        --swiper-navigation-color: #fff;
+    }
+    .swiper-button-next {
+        margin-right: 2.5rem;
+    }
+    .swiper-button-prev {
+        margin-left: 2.5rem;
+    }
+    .swiper h3 {
         color: aliceblue;
+        font-family: sans-serif;
+        font-size: 1.6rem;
+        align-self: center;
+        font-weight: bolder;
+    }
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2.5rem;
+    }
+    .swiper-pagination {
+        margin-bottom: 0.1rem;
     }
     section {
         min-height: 30rem;
@@ -105,15 +199,6 @@ import { Carousel } from 'webcoreui/astro';
         align-items: center;
         justify-content: center;
         gap: 1.8rem;
-    }
-    #slide-status {
-
-    }
-    #controls {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
     }
     #card_opinie {
         background-color: var(--jasnoszary);
@@ -127,5 +212,10 @@ import { Carousel } from 'webcoreui/astro';
         align-items: center;
         flex-direction: column;
         margin-top: 2rem;
+    }
+    @media screen and (max-width: 600px) {
+        .swiper-button-prev, .swiper-button-next {
+            display: none;
+        }
     }
 </style>

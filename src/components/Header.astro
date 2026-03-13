@@ -17,7 +17,10 @@ import { Icon } from 'astro-icon/components'
     
     <div id="logo_i_tytul">
         <img src={logo.src} alt="Logo psie talarki">
-        <h1>Pjeski Talarka</h1>
+        <div>
+            <h1>Pjeski Talarka</h1>
+            <h2>Zofia Talarczyk, behawiorystka</h2>
+        </div>
     </div>
     <Icon id="hamburger" onclick="toggle_menu()" name="mdi:menu" size="48"/>
     <nav class="visible">
@@ -94,6 +97,10 @@ nav {
 h1 {
     font-size: clamp(0.9rem, 2dvw, 1.6rem);
 }
+h2 {
+    font-size: clamp(0.6rem, 0.9dvw, 1rem);
+}
+
 
 
 /* Extra small devices (phones, 600px and down) */
