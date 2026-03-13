@@ -6,11 +6,12 @@ import '@fontsource/roboto';
 <html lang="pl">
 	<head>
 		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="/src/styles/global.css">
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/src/assets/logo2.png" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Pieski talarka</title>
+		<title>Pjeski talarka</title>
 	</head>
 	<body>
 		<slot />
@@ -27,12 +28,12 @@ import '@fontsource/roboto';
 	}
 	a {
 		text-decoration: none;
-		color: black;
+		color: var(--color-text);
 		font-size: larger;
 	}
 	a:hover {
 		text-decoration: underline;
-		filter: drop-shadow(0.2px 0.2px 0.3px grey);
+		filter: drop-shadow(0.2px 0.2px 0.3px var(--color-shadow));
 	}
 </style>
 

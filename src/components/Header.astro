@@ -60,7 +60,7 @@ import { Icon } from 'astro-icon/components'
 }
 
 #back {
-    background-color: aliceblue;
+    background-color: var(--color-bg);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -104,17 +104,17 @@ h2 {
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 700px) {
     nav {
         position: fixed;
         right: 10px;
         flex-direction: column;
-        background-color: aliceblue;
+        background-color: var(--color-bg);
         gap: 3rem;
         top: 5.5rem;
         padding: 2rem;
         border-radius: 0.5rem;
-        filter: drop-shadow(1px 1px 3px greay);
+        filter: drop-shadow(1px 1px 3px var(--color-shadow));
         /* display: none; */
         transition: 0.1s;
         translate: 0px 20px;

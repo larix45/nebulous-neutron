@@ -159,8 +159,8 @@ import { Icon } from 'astro-icon/components'
         <div class="linki">
             <span class="info">Kontakt</span>
             <a href="tel:+48570622745"> <Icon name="mdi:phone" /> 570 622 745</a>
-            <a href="mailto://zocha.lubi@gmail.com"> <Icon name="mdi:email" /> zocha.lubi@gmail.com</a>
-            <span> <Icon name="mdi:factory" /> NIP: 12 34 567 890</span>
+            <a href="mailto://kontakt@pjeski.talarka.com"> <Icon name="mdi:email" /> kontakt@pjeski.talarka.com</a>
+            <span> <Icon name="mdi:factory" /> NIP: 64 12 569 310</span>
             <span> <Icon name="mdi:location" /> Ruda Śląska</span>
         </div>
     </nav>
@@ -193,7 +193,6 @@ import { Icon } from 'astro-icon/components'
         z-index: 999;
         display: flex;
         gap: 1.4rem;
-        background-color: aliceblue;
         width: fit-content;
         padding: 0.7rem;
         justify-content: center;
@@ -204,7 +203,7 @@ import { Icon } from 'astro-icon/components'
         font-size: larger;
     }
     footer {
-        background-color: aliceblue;
+        background-color: var(--color-bg);
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -213,8 +212,8 @@ import { Icon } from 'astro-icon/components'
         padding: 1rem;
     }
     #Leaflet {
-        width: 25rem;
-        height: 25rem;
+        width: clamp(7rem, 25rem, 90dvw);
+        height:  clamp(7rem, 25rem, 100dvh);
         align-self: center;
     }
     nav {
