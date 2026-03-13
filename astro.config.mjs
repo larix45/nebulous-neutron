@@ -5,8 +5,6 @@ import icon from 'astro-icon';
 
 import netlify from '@astrojs/netlify';
 
-import { webcore } from 'webcoreui/integration';
-
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -22,6 +20,6 @@ export default defineConfig({
     }
   },
 
-  integrations: [icon(), webcore()],
+  integrations: [icon()],
   adapter: netlify(),
 });

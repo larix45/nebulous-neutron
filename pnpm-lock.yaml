@@ -20,9 +20,6 @@ importers:
       astro:
         specifier: ^5.17.1
         version: 5.17.3(@netlify/blobs@10.7.0)(@types/node@25.3.0)(jiti@2.6.1)(rollup@4.58.0)(sass@1.97.3)(typescript@5.9.3)(yaml@2.8.2)
-      astro-carousel:
-        specifier: ^3.0.3
-        version: 3.0.3(astro@5.17.3(@netlify/blobs@10.7.0)(@types/node@25.3.0)(jiti@2.6.1)(rollup@4.58.0)(sass@1.97.3)(typescript@5.9.3)(yaml@2.8.2))
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
@@ -38,9 +35,6 @@ importers:
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
-      webcoreui:
-        specifier: ^1.4.0
-        version: 1.4.0
 
 packages:
 
@@ -1468,11 +1462,6 @@ packages:
   ast-module-types@6.0.1:
     resolution: {integrity: sha512-WHw67kLXYbZuHTmcdbIrVArCq5wxo6NEuj3hiYAWr8mwJeC+C2mMCIBIWCiDoCye/OF/xelc+teJ1ERoWmnEIA==}
     engines: {node: '>=18'}
-
-  astro-carousel@3.0.3:
-    resolution: {integrity: sha512-8lBP1lmhuq2GFUFBLy/ypYkX+9dpezRd+j5Oiqjj25Hod+sgqqkMdNULCqu4Nh1uKphDrSRAiRbDWMgrxpkZCg==}
-    peerDependencies:
-      astro: ^5.1.7
 
   astro-icon@1.1.5:
     resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==}
@@ -3937,9 +3926,6 @@ packages:
     resolution: {integrity: sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==}
     engines: {node: '>= 8'}
 
-  webcoreui@1.4.0:
-    resolution: {integrity: sha512-QQq+ijmjz3L+53mxIr4SsRYnFMhc/Ch3ANmoI3SDAJe3l7dEBoCMRHFbC/zGxcY6bnpXZV5eygVZv3qFGvXp6Q==}
-
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
 
@@ -5525,10 +5511,6 @@ snapshots:
       is-array-buffer: 3.0.5
 
   ast-module-types@6.0.1: {}
-
-  astro-carousel@3.0.3(astro@5.17.3(@netlify/blobs@10.7.0)(@types/node@25.3.0)(jiti@2.6.1)(rollup@4.58.0)(sass@1.97.3)(typescript@5.9.3)(yaml@2.8.2)):
-    dependencies:
-      astro: 5.17.3(@netlify/blobs@10.7.0)(@types/node@25.3.0)(jiti@2.6.1)(rollup@4.58.0)(sass@1.97.3)(typescript@5.9.3)(yaml@2.8.2)
 
   astro-icon@1.1.5:
     dependencies:
@@ -8563,8 +8545,6 @@ snapshots:
   web-namespaces@2.0.1: {}
 
   web-streams-polyfill@3.3.3: {}
-
-  webcoreui@1.4.0: {}
 
   webidl-conversions@3.0.1: {}
 
