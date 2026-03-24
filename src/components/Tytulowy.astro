@@ -39,21 +39,21 @@ import Image from 'astro/components/Image.astro';
         bottom: 0rem;
     }
     #image2 {      
-        filter:blur(1px) contrast(0.8) brightness(0.425);
+        filter:blur(6px) contrast(0.8) brightness(0.425);
         height: 100%;
         width: 100%;
         object-fit: cover;
     }
     section {
-        height: clamp(30rem, fit-content, 50rem);
+        height: clamp(10rem, 85dvh, 40rem);
         width: 100%;
         position: relative;
-        background-color: rgb(9, 118, 102);
+        background-color: black;
         filter:drop-shadow(1px 1px 3px var(--color-shadow));
     }
     #card {
         position: absolute;
-        top: 3rem;
+        top: 3%;
         left: clamp(1rem, 8vw, 20rem);
         background-color: var(--color-bg2);
         color: var(--color-text2);
@@ -85,13 +85,23 @@ import Image from 'astro/components/Image.astro';
 
     @media screen and (max-width: 950px) {
         #image {
-            right: 20%;
+            right: 10%;
+            height: auto;
         }
         section {
-            height: 34rem;
+            height: 44rem;
         }
+        /* #card {
+            width: 80%;
+            bottom: 1%;
+            justify-content: end;
+        } */
         #card {
-            width: 70%;
+            filter: drop-shadow(1px 1px 4px var(--color-shadow)) opacity(0.95);
+            display: block;
+            position: absolute;
+            bottom: 2rem;
+            top: auto;
         }
     }
     @media screen and (max-width: 600px) {
@@ -116,14 +126,19 @@ import Image from 'astro/components/Image.astro';
     @media screen and (max-width: 480px) {
         button {
             font-size: small;
+            width: 100%;
         }
         p {
             font-size: smaller;
         }
+        #image {
+            top: 0px;
+        }
         #card {
-            max-height: 100%;
             overflow-y: auto;
-            top: 5rem
+            height: fit-content;
+            width: fit-content;
+            left: 0;
         }
     }
 </style>
