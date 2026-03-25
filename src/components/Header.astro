@@ -15,20 +15,20 @@ import { Icon } from 'astro-icon/components'
         }
     </script>
     
-    <div id="logo_i_tytul">
+    <a href="/" id="logo_i_tytul">
         <img src={logo.src} alt="Logo psie talarki">
         <div>
             <h1>Pjeski Talarka</h1>
             <h2>Zofia Talarczyk, behawiorystka</h2>
         </div>
-    </div>
+    </a>
     <Icon id="hamburger" onclick="toggle_menu()" name="mdi:menu" size="48"/>
     <nav class="visible">
-        <a href="">Start</a>
-        <a href="">O mnie</a>
-        <a href="">Oferta</a>
-        <a href="">Sklep</a>
-        <a href="">Kontakt</a>
+        <a href="/">Start</a>
+        <a href="/o-mnie/">O mnie</a>
+        <a href="/oferta">Oferta</a>
+        <a href="/sklep">Sklep</a>
+        <a href="/kontakt">Kontakt</a>
         <div class="social">
             <a href="https://www.facebook.com/profile.php?id=61579532473491">
                 <Icon id="facebook" name="mdi:facebook" size="24"/>
@@ -58,6 +58,13 @@ import { Icon } from 'astro-icon/components'
     display: flex;
     gap: 1rem;
 }
+a:hover {
+    scale: 1.1;
+}
+#facebook:hover, #instagram:hover{
+    filter:drop-shadow(0.3px 0.3px 0.8px rgb(68, 68, 68));
+    scale: 1.1;
+}
 
 #back {
     background-color: var(--color-bg);
@@ -72,12 +79,16 @@ import { Icon } from 'astro-icon/components'
     top: 0px;
     z-index: 4;
 }
+
+
 #logo_i_tytul
 {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 2rem;
+    text-decoration: none;
+    scale: 1.0;
 }
 img {
     aspect-ratio: 1;
@@ -97,10 +108,12 @@ nav {
 h1 {
     margin: 0px;
     font-size: clamp(0.9rem, 2dvw, 1.6rem);
+    margin-bottom: 0.15rem;
 }
 h2 {
     margin: 0px;
     font-size: clamp(0.6rem, 0.9dvw, 1rem);
+    margin-top: 0;
 }
 
 
