@@ -69,7 +69,13 @@ import { Icon } from 'astro-icon/components'
 .dropdown details {
     position: relative;
 }
-
+details summary #chevron {
+    transform: rotate(0deg);
+    transition: all 0.1s ease;
+}
+details[open]summary #chevron {
+    transform: rotate(180deg);
+}
 .dropdown summary {
     list-style: none;
     cursor: pointer;
