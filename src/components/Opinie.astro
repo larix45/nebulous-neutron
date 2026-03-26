@@ -75,10 +75,10 @@ const opinie: Review[] = [
 ---
 
 <section>
+    <h3>Co mówią o mnie inni:</h3>
     <div class="swiper">
-        <h3>Co mówią o mnie inni:</h3>
         <div class="swiper-wrapper">
-            {opinie.map((opinia: Review) => (
+            { opinie.map((opinia: Review) => (
                 <div class="swiper-slide">
                     <div id="card_opinie">
                         <span>
@@ -158,7 +158,8 @@ const opinie: Review[] = [
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        align-items: center;
+
         --swiper-pagination-bullet-inactive-color: var(--color-text2);
         --swiper-pagination-color: var(--color-text2);
         --swiper-navigation-color: var(--color-text2);
@@ -248,5 +249,6 @@ const opinie: Review[] = [
             width: 70%;
             height: fit-content;
         }
+
     }
 </style>

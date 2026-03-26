@@ -26,7 +26,16 @@ import { Icon } from 'astro-icon/components'
     <nav class="visible">
         <a href="/">Start</a>
         <a href="/o-mnie/">O mnie</a>
-        <a href="/oferta" id="link_oferta">Oferta <Icon id="chevron" name="mdi:chevron-down" size="24"/></a>
+        <div class="dropdown" id="link_oferta">
+            <details>
+                <summary><a>Oferta</a> <Icon id="chevron" name="mdi:chevron-down" size="20"/></summary>
+                <div class="dropdown-menu" aria-label="Oferta submenu">
+                    <a href="/oferta/konsultacje-behawioralne">Konsultacje behawioralne</a>
+                    <a href="/oferta/uslugi-groomerskie">Usługi groomerskie</a>
+                    <a href="/oferta/spacery-socjalizacyjne">Spacery socjalizacyjne</a>
+                </div>
+            </details>
+        </div>
         <a href="/sklep">Sklep</a>
         <a href="/kontakt">Kontakt</a>
         <div class="social">
@@ -53,21 +62,69 @@ import { Icon } from 'astro-icon/components'
 </style>
 
 <style>
-#link_oferta {
-    display: flex;
-    align-items: center;
+.dropdown {
     position: relative;
 }
-#link_oferta:hover::after {
-    content: "";
-    height: 10rem;
-    width: 10rem;
-    background-color: var(--color-bg);
-    filter: drop-shadow(0.5px 0.5px 3px var(--color-shadow));
-    border-radius: 0.4rem;
-    position: absolute;
-    top: 1.5rem;
+
+.dropdown details {
+    position: relative;
 }
+
+.dropdown summary {
+    list-style: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: inherit;
+    padding: 0.2rem 0.35rem;
+    border-radius: 0.35rem;
+}
+
+.dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.35rem);
+    background: var(--color-bg);
+    border: 1px solid var(--color-shadow);
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    border-radius: 0.5rem;
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.5rem);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-menu a {
+    padding: 0.7rem 1rem;
+    color: inherit;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: 0;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown details[open] .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 .social {
     display: flex;
     gap: 1rem;
@@ -160,6 +217,38 @@ h2 {
     nav.visible {
         translate: 100px;
         opacity: 0;
+    }
+    .dropdown {
+        width: 100%;
+    }
+    .dropdown details {
+        width: 100%;
+    }
+    .dropdown summary {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.0rem;
+        font-size: 1.4rem;
+    }
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding-left: 0.2rem;
+    }
+    .dropdown-menu a {
+        padding: 0.6rem 0.5rem;
+        border: none;
+        border-radius: 0.35rem;
+        background: rgba(255,255,255,0.05);
+        margin: 0.15rem 0;
+    }
+    .dropdown-menu a:hover {
+        background: rgba(255,255,255,0.12);
     }
     .social {
         font-size: 6rem;
