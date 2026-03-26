@@ -72,7 +72,12 @@ import { Icon } from "astro-icon/components"
 </section>
 
 <style>
+    h2 {
+        font-size: 2rem;
+    }
     section {
+        margin-top: 1.2rem;
+        padding: 0rem 10%;
         min-height: 40rem;
         display: flex;
         flex-direction: column;
@@ -96,14 +101,22 @@ import { Icon } from "astro-icon/components"
         word-wrap: normal;
         font-size: large;
     }
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 1000px) {
         ul {
         grid-template-columns: auto auto;
+        }
+        section 
+        {
+            padding: 0rem 5%;
         }
     }
      @media only screen and (max-width: 600px) {
         ul {
         grid-template-columns: auto;
+        }
+        section 
+        {
+            padding: 0rem 0%;
         }
     }
 </style>
