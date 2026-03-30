@@ -1,16 +1,139 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Icon } from "astro-icon/components";
+import zofiaIBari from "../assets/zofia_i_bari_na_lawce.jpg";
+import oczyZblizenie from "../assets/oczyZblizenie.jpg";
 ---
 
 <Layout>
-	<Header/>
-    <h2>
-        <span>TEST O MNIE</span>
-    </h2>
-	<Footer/>
+    <Header />
+    <div>
+        <img id="oczy" src={oczyZblizenie.src} alt="Tlo" />
+        <div>
+            <h3>O mnie</h3>
+
+            <span
+                ><Icon
+                    id="home"
+                    name="mdi:home-outline"
+                    color={"white"}
+                    size="32px"
+                /> / o mnie</span
+            >
+        </div>
+    </div>
+    <section>
+        <h4>Cześć</h4>
+        <h5>Nazywam się Zofia</h5>
+        <p>
+            Na co dzień uczę opiekunów jak rozmawiać ze swoimi psami jako
+            behawiorystka oraz dbam o zdrową sierść czworonogów jako fryzjerka.
+            Z wykształcenia jestem technikiem weterynarii, więc można
+            powiedzieć, że 3w1 :) Sprawdź, jak mogę pomóc Tobie!
+        </p>
+        <a href="/oferta">
+            <button>Oferta</button>
+        </a>
+        <img id="glowne" src={zofiaIBari.src} alt="Zofia i Bari" />
+    </section>
+    <Footer />
 </Layout>
+
+<style>
+    div {
+        position: relative;
+        height: clamp(10rem, 13dvh, 40rem);
+    }
+    img#oczy {
+        top: 0;
+        position: absolute;
+        height: clamp(10rem, 13dvh, 40rem);
+        width: 100%;
+        object-fit: cover;
+        filter: sepia(0.1) brightness(0.7) contrast(1.1);
+    }
+    h3,
+    span {
+        color: var(--color-text2);
+    }
+    h3 {
+        font-size: 2.4rem;
+    }
+    span {
+        font-size: 1.8rem;
+    }
+    #home {
+        transform: translateY(0.4rem);
+    }
+    div > div {
+        position: absolute;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 1rem;
+    }
+    section {
+        padding: clamp(3dvw, 8%, 0dvw);
+        background-color: color-mix(in srgb, var(--color-bg) 90%, var(--color-bg2));
+    }
+    h4 {
+        font-size: 3.5rem;
+    }
+    h5 {
+        font-size: 2.8rem;
+    }
+    p {
+        font-size: 1.3rem;
+    }
+    img#glowne {
+        filter: drop-shadow(3px 3px 1px var(--color-shadow));
+        margin-top: 2rem;
+    }
+    button {
+        border: 0px;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        filter: drop-shadow(0.1px 0.1px 3px rgb(38, 47, 0));
+        width: 60%;
+        font-size: larger;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        /* border: 3px solid var(--color-text2); */
+        color: var(--color-text2);
+        background: color-mix(in srgb, var(--color-primary) 20%, var(--color-bg2));
+        opacity: 0.7;
+        font-weight: 700;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+    button:hover {
+        filter: brightness(0.8);
+    }
+    @media screen and (min-width: 800px) {
+        img#glowne {
+            position: absolute;
+            height: clamp(10rem, 30dvw, 35rem);
+            right: 10%;
+            top: 10%;
+        }
+        p, h4, h5 {
+            max-width: 40%;
+        }
+        section {
+            min-height: 40rem;
+            position: relative;
+        }
+        button {
+            position: absolute;
+            left: 10rem;
+            bottom: calc(10rem - 10dvh);
+            width: clamp(6rem, 10%, 40rem);
+        }
+
+    }
+     
+</style>
