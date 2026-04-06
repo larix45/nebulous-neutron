@@ -1,0 +1,135 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
+import zofiaIBari from "../../assets/zofia_i_bari_na_lawce.jpg";
+import oczyZblizenie from "../../assets/oczyZblizenie.jpg";
+---
+
+<Layout>
+    <Header />
+    <div>
+        <img id="oczy" src={oczyZblizenie.src} alt="Tlo" />
+        <div>
+            <h3>Trening kooperacyjny</h3>
+
+            <span>~ Naucz się rozmawiać z psem ~</span>
+        </div>
+    </div>
+    <section>
+        <p>
+            <b>Trening kooperacyjny,</b> inaczej zwany medycznym, to dialog z psem
+            wspierający jego poczucie sprawczości. Dotyczy przyzwyczajania psa
+            m.in. do:
+        </p>
+
+        <ul>
+            <li>czesania,</li>
+            <li>mycia zębów,</li>
+            <li>zakładania szelek/obroży,</li>
+            <li>wprowadzeniu kagańca,</li>
+            <li>klatki kennelowej,</li>
+            <li>obcinania pazurów,</li>
+            <li>wykonywania zastrzyków,</li>
+            <li>odwrażliwiania na dźwięki.</li>
+        </ul>
+        
+        <p>
+            W treningu kooperacyjnym pies przedstawia nam zachowanie (np.
+            spojrzenie, wejście na coś, położenie głowy na poduszce/kolanach),
+            które sygnalizuje nam, że pies zgadza się na rozpoczęcie bądź
+            kontynuację zabiegu.
+        </p>
+
+        <p class="underline">
+            Pomaga on zbudować zaufanie i pewność siebie u psa, ale nie jest to
+            remedium na każdy problem.
+        </p>
+
+        <p>
+            <b>Jeżeli pies nie ma wyboru, to mu go nie dajemy.</b> Przykładowo, jeśli
+            Nasz pies musi mieć od następnego dnia robione zastrzyki z
+            antybiotykiem, to trzeba je zrobić - nie ma tutaj miejsca na ten
+            dialog.
+        </p>
+
+        <p>
+            <b>Jednorazowy trening</b> to koszt 150zł. Jest możliwość wykupienia
+            pakietu 5 treningów w cenie 550zł. Każdy trwa do 60 minut.
+            <br />
+            Dodatkowo po treningu <b>dostajesz materiały</b> oraz pracę domową, którą należy
+            wykonać do kolejnego spotkania.
+        </p>
+    </section>
+    <Footer />
+</Layout>
+
+<style>
+    p.underline {
+        text-decoration: underline;
+    }
+    li {
+        list-style-type: none;
+    }
+    li::before {
+        content: "✨";
+        width: 1rem;
+        padding-right: 0.3rem;
+    }
+    div {
+        position: relative;
+        height: clamp(10rem, 13dvh, 40rem);
+    }
+    img#oczy {
+        top: 0;
+        position: absolute;
+        height: clamp(10rem, 13dvh, 40rem);
+        width: 100%;
+        object-fit: cover;
+        filter: sepia(0.1) brightness(0.7) contrast(1.1);
+    }
+    h3,
+    span {
+        color: var(--color-text2);
+    }
+    h3 {
+        font-size: 2.4rem;
+    }
+    span {
+        font-size: 1.2rem;
+    }
+    #home {
+        transform: translateY(0.4rem);
+    }
+    div {
+        position: relative;
+    }
+    div > div {
+        position: absolute;
+        top: 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 1rem;
+    }
+    section {
+        padding: clamp(3dvw, 8%, 0dvw);
+        background-color: color-mix(
+            in srgb,
+            var(--color-bg) 90%,
+            var(--color-bg2)
+        );
+    }
+
+    @media screen and (min-width: 800px) {
+        section {
+            min-height: 40rem;
+            display: flex;
+            flex-direction: column;
+            padding: 5% 14%;
+            position: relative;
+            font-size: 1.2rem;
+        }
+    }
+</style>

@@ -1,0 +1,174 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
+import zofiaIBari from "../../assets/zofia_i_bari_na_lawce.jpg";
+import oczyZblizenie from "../../assets/oczyZblizenie.jpg";
+---
+
+<Layout>
+    <Header />
+    <div>
+        <img id="oczy" src={oczyZblizenie.src} alt="Tlo" />
+        <div>
+            <h3>Spacery socjalizacyjne 1:1</h3>
+
+            <span>~ Bezpieczna przestrzeń do nauki ~</span>
+        </div>
+    </div>
+    <section>
+        <p>
+            Spacer socjalizacyjny to doskonały pomysł dla psów lękliwych,
+            agresywnych czy reaktywnych w kontaktach z innymi psami.
+        </p>
+
+        <h5>Jeżeli chcesz:</h5>
+        <ul>
+            <li>
+                popracować nad komunikacją Twojego psa z innymi czworonogami
+            </li>
+            <li>
+                podnieść kompetencje społeczne swojego psa
+            </li>
+            <li>
+                zapewnić swojemu psu potrzebną dawkę kontaktu międzygatunkowego
+            </li>
+            <li>
+                dowiedzieć się więcej o psiej komunikacji i strategiach
+
+            </li>
+            <li>
+                uzupełnić terapię swojego psa o wartościowe kontakty z innymi
+            </li>
+        </ul>
+
+        <p>
+            to serdecznie zapraszam Ciebie i Twojego psa na spacery
+            socjalizacyjne!
+        </p>
+        <p>
+            Są to spotkania w starannie dobranej parze psów. Ważnym dla mnie
+            jest, aby czworonogi zawsze wynosiły wartość dla siebie oraz czuły
+            się bezpiecznie. Zdarzają się bardzo różne sytuacje - jedne
+            łatwiejsze, drugie trudniejsze - ale za każdym razem jest nauka.
+        </p>
+
+        <p>
+            Zapraszam do zapoznania się z regulaminem spacerów socjalizacyjnych <a
+                href="/regulamin.pdf">[tutaj]</a>. 🙂
+        </p>
+        <h5>Najczęściej zadawane pytania:</h5>
+
+        <details>
+            <summary>Jak zapisać się na taki spacer?</summary>
+            <ol>
+                <li>
+                    Umów się ze mną na spotkanie. Konsultacja behawioralna lub
+                    spacer behawioralny są do tego idealne. Dobre poznanie psa
+                    to klucz do dobrania mu odpowiedniego kompana :)
+                </li>
+                <li>
+                    Daj znać, że chcesz iść na spacer 1:1… a ja już wszystko
+                    załatwię.
+                </li>
+            </ol>
+
+            <p>
+                Z racji nieposiadania wyznaczonych dni na spacery socjalizacyjne
+                umawiam takie spotkania pojedynczo w ciągu dnia, o porze która
+                pasuje całej trójce (ja & opiekunowie obu psów).
+            </p>
+        </details>
+
+        <details>
+            <summary> Czy muszę coś zabrać ze sobą? </summary>
+
+            Pies powinien być ubrany w wygodne szelki (opcjonalnie obrożę) oraz
+            długą linkę min. 5m. Niedopuszczalne jest noszenie przez psa
+            narzędzi sprawiające ból czy dyskomfort jak kolczatka, dławik czy
+            łańcuszki zaciskowe.
+        </details>
+    </section>
+    <Footer />
+</Layout>
+
+<style>
+    h5 {
+        font-size: 1.1rem;
+    }
+    details {
+        margin: 3% 0%;
+    }
+    summary {
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    summary:hover {
+        text-decoration: underline;
+    }
+    ul li {
+        list-style-type: none;
+    }
+    ul li::before {
+        content: "✨";
+        width: 1rem;
+        padding-right: 0.3rem;
+    }
+    div {
+        position: relative;
+        height: clamp(10rem, 13dvh, 40rem);
+    }
+    img#oczy {
+        top: 0;
+        position: absolute;
+        height: clamp(10rem, 13dvh, 40rem);
+        width: 100%;
+        object-fit: cover;
+        filter: sepia(0.1) brightness(0.7) contrast(1.1);
+    }
+    h3,
+    span {
+        color: var(--color-text2);
+    }
+    h3 {
+        font-size: 2.4rem;
+    }
+    span {
+        font-size: 1.2rem;
+    }
+    #home {
+        transform: translateY(0.4rem);
+    }
+    div {
+        position: relative;
+    }
+    div > div {
+        position: absolute;
+        top: 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 1rem;
+    }
+    section {
+        padding: clamp(3dvw, 8%, 0dvw);
+        background-color: color-mix(
+            in srgb,
+            var(--color-bg) 90%,
+            var(--color-bg2)
+        );
+    }
+
+    @media screen and (min-width: 800px) {
+        section {
+            min-height: 40rem;
+            display: flex;
+            flex-direction: column;
+            padding: 5% 14%;
+            position: relative;
+            font-size: 1.2rem;
+        }
+    }
+</style>
