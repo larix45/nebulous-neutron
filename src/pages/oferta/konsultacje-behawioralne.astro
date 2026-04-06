@@ -1,0 +1,144 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
+import zofiaIBari from "../../assets/zofia_i_bari_na_lawce.jpg";
+import oczyZblizenie from "../../assets/oczyZblizenie.jpg";
+---
+
+<Layout>
+    <Header />
+    <div>
+        <img id="oczy" src={oczyZblizenie.src} alt="Tlo" />
+        <div>
+            <h3>Konsultacja behawioralna</h3>
+
+            <span>~ Pierwszy krok do zrozumienia ~</span>
+        </div>
+    </div>
+    <section>
+        <p>
+            <b>Konsultacja behawioralna</b> to inaczej mówiąc spotkanie, podczas którego
+            omawiamy problemy z jakimi się mierzysz. Najczęściej ma formę spaceru
+            po Waszej okolicy, a następnie wywiadu u Was w domu. Po spotkaniu dostajesz
+            ode mnie podsumowanie konsultacji w formie PDF i ewentualny spis ćwiczeń.
+        </p>
+        <h5>Z czym między innymi mogę Tobie pomóc?</h5>
+        <ul>
+            <li>Agresja do innych zwierząt i ludzi</li>
+            <li>Relacja psio-kocia</li>
+            <li>Zachowania lękowe</li>
+            <li>Reaktywność</li>
+            <li>Niszczenie przedmiotów</li>
+            <li>Ciągnięcie na smyczy</li>
+        </ul>
+
+        <p>
+            <b>Pierwsza konsultacja</b> trwa około 2 godzin i kosztuje 250zł. Każde
+            <b>kolejne spotkanie</b> kontynuujące terapię trwa około półtora godziny
+            i kosztuje 200zł. Naliczana jest dodatkowa opłata za dojazd 1zł/km w przypadku
+            osób spoza czerwonego obszaru zaznaczonego na mapie.
+        </p>
+        <h5>Najczęściej zadawane pytania:</h5>
+        <details>
+            <summary>Czy muszę coś przygotować przed konsultacją?</summary>
+            Na samą konsultację nie musisz przygotowywać nic specjalnego. Twój pies
+            powinien funkcjonować w swoim naturalnym rytmie dnia. Jeżeli Twój pies
+            ma historię leczenia - warto przedstawić mi dokumentację medyczną (wraz
+            z formularzem przesłać na email bądź w formie wydruku w trakcie spotkania).
+            Proszę też o przesłanie nagrań przedstawiające zachowanie, z jakim chcesz
+            pracować - ułatwi to ocenę sytuacji i zaplanowanie terapii.
+        </details>
+        <details>
+            <summary>Ile konsultacji będzie potrzebnych? </summary>
+            Jest to kwestia bardzo indywidualna. Są problemy, które po pierwszej konsultacji
+            już są rozwiązane, ale są też i takie, w których potrzeba kilku spotkań.
+            Aby proces terapeutyczny przebiegał sprawnie rekomenduję spotkania co
+            2-3 tygodnie, żeby jak najlepiej monitorować postępy, wprowadzać zmiany
+            a efekty były szybko widoczne.
+        </details>
+    </section>
+    <Footer />
+</Layout>
+
+<style>
+    h5 {
+        font-size: 1.1rem;
+    }
+    details {
+        margin: 3% 0%;
+    }
+    summary {
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    summary:hover {
+        text-decoration: underline;
+    }
+    ul li {
+        list-style-type: none;
+    }
+    ul li::before {
+        content: "🐾";
+        width: 1rem;
+        padding-right: 0.3rem;
+    }
+
+    div {
+        position: relative;
+        height: clamp(10rem, 13dvh, 40rem);
+    }
+    img#oczy {
+        top: 0;
+        position: absolute;
+        height: clamp(10rem, 13dvh, 40rem);
+        width: 100%;
+        object-fit: cover;
+        filter: sepia(0.1) brightness(0.7) contrast(1.1);
+    }
+    h3,
+    span {
+        color: var(--color-text2);
+    }
+    h3 {
+        font-size: 2.4rem;
+    }
+    span {
+        font-size: 1.2rem;
+    }
+    #home {
+        transform: translateY(0.4rem);
+    }
+    div {
+        position: relative;
+    }
+    div > div {
+        position: absolute;
+        top: 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 1rem;
+    }
+    section {
+        padding: clamp(3dvw, 8%, 0dvw);
+        background-color: color-mix(
+            in srgb,
+            var(--color-bg) 90%,
+            var(--color-bg2)
+        );
+    }
+
+    @media screen and (min-width: 800px) {
+        section {
+            min-height: 40rem;
+            display: flex;
+            flex-direction: column;
+            padding: 5% 14%;
+            position: relative;
+            font-size: 1.2rem;
+        }
+    }
+</style>
