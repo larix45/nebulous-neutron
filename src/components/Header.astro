@@ -8,10 +8,10 @@ import { Icon } from 'astro-icon/components'
     <script defer>
         function toggle_menu()
         {
-            if(document.getElementsByTagName("nav")[0].classList.contains("visible"))
-                document.getElementsByTagName("nav")[0].classList.remove("visible");
+            if(document.getElementsByTagName("nav")[0].style.display == "none")
+                document.getElementsByTagName("nav")[0].style.display = "flex";
             else
-                document.getElementsByTagName("nav")[0].classList.add("visible");
+                document.getElementsByTagName("nav")[0].style.display = "none";
         }
     </script>
     
@@ -226,10 +226,11 @@ a, h1, h2 {
         padding: 2rem;
         border-radius: 0.5rem;
         filter: drop-shadow(1px 1px 3px var(--color-shadow));
-        /* display: none; */
+        display: none;
         transition: 0.1s;
         translate: 0px 20px;
         opacity: 1;
+        z-index: 10;
     }
     
     #hamburger {
@@ -238,10 +239,6 @@ a, h1, h2 {
     a {
         width: 100%;
         font-size: 1.4rem;
-    }
-    nav.visible {
-        translate: 100px;
-        opacity: 0;
     }
     .dropdown {
         width: 100%;
