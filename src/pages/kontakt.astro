@@ -1,47 +1,181 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import backgroundInu from "../assets/kontakt2.png";
+import { Icon } from "astro-icon/components";
+import { Leaflet, Circle, Popup, Polygon } from "astro-leaflet";
+
 ---
 
 <Layout>
   <Header />
-  <main class="kontakt-container">
-    <section class="kontakt-hero">
-      <img class="kontakt-bg" src="/logo2.png" alt="Piesek" />
-      <div class="card">
-        <span class="kontakt-badge">KONTAKT</span>
-        <h2>Jak się skontaktować?</h2>
-        <p>Napisz do mnie lub zadzwoń – chętnie odpowiem na Twoje pytania i pomogę dobrać najlepsze wsparcie dla Ciebie i Twojego psa.</p>
-        <div class="kontakt-info">
-          <div>
-            <span class="kontakt-label">Napisz</span>
-            <a href="mailto:kontakt@pieskitalarka.com">kontakt@pieskitalarka.com</a>
+  <section>
+    <img class="background" src={backgroundInu.src} alt="Piesek" />
+    <div class="card effect hero">
+      <span class="badge">KONTAKT</span>
+      <h2>Jak się skontaktować?</h2>
+      <p>
+        Napisz do mnie lub zadzwoń – chętnie odpowiem na Twoje pytania i pomogę
+        dobrać najlepsze wsparcie dla Ciebie i Twojego psa.
+      </p>
+      <div class="kontakt-info">
+        <div class="hbox">
+          <a href="mailto:kontakt@pieskitalarka.com">
+
+            <div class="ikona adddark">
+              <Icon name={"mdi:email"} size={32}/>
+            </div>
+          </a>
+          <div class="vbox">
+            <span>Napisz</span>
+            <a href="mailto:kontakt@pieskitalarka.com"
+            >kontakt@pieskitalarka.com</a>
           </div>
-          <div>
-            <span class="kontakt-label">Zadzwoń</span>
-            <a href="tel:+48570622745">+48 570 622 745</a>
+        </div>
+        <div class="hbox">
+          <a href="tel:+48570622745">
+          <div class="ikona adddark">
+            <Icon name={"mdi:phone"} size={32}/>
+          </div>
+          </a>
+
+            <div class="vbox">
+              <span>Zadzwoń</span>
+              <a href="tel:+48570622745">+48 570 622 745</a>
           </div>
         </div>
       </div>
-    </section>
-    <section class="kontakt-map-section">
-      <div class="kontakt-map-card">
-        <div>
+    </div>
+    <div class="card gdzie hbox">
+      <div class="vbox">
+        <div class="hbvox">
           <span class="kontakt-map-label">Gdzie działam?</span>
-          <p>Obsługuję Katowice oraz okoliczne miejscowości w zaznaczonym obszarze.</p>
         </div>
-        <img class="kontakt-map" src="/styles/mapa_katowice.png" alt="Mapa Katowic" />
+        <p>
+            Obsługuję Katowice oraz okoliczne miejscowości <br> w zaznaczonym obszarze.
+          </p>
       </div>
-    </section>
-    <section class="kontakt-footer-text">
-      <p>Najlepszy sposób, żeby pomóc swojemu psu, to zrobić pierwszy krok. Napisz do mnie!</p>
-      <span class="kontakt-heart">♡</span>
-    </section>
-  </main>
+      <div class="mapa">
+        
+      </div>
+    </div>
+  </section>
+  <section class="adddark zlotamysl">
+    <p>
+      Najlepszy sposób, żeby pomóc swojemu psu, <br> to zrobić pierwszy krok. Napisz
+      do mnie!
+    </p>
+    <Icon name={"mdi:heart-outline"} size={64} color={"#a78f06"}/>
+  </section>
   <Footer />
 </Layout>
 
 <style>
+  section {
+     overflow: visible;
+  }
+  img.background {
+    transform: translate(0%, 7%) scale(1.4);
+  }
+  div.hero a {
+    color: color-mix(in srgb, var(--color-text2) 80%, black);
+  }
+  div.hero div.ikona {
+    margin-right: 1rem;
+    /* height: 100%; */
+    /* width: 100%; */
+  }
+  div.hero {
+    color: var(--color-text2);
+    position: absolute;
+    left: 7%;
+    top: 3%;
+    height: min-content;
+    width: min-content;
+    padding: 2rem;
+  }
+  span.kontakt-map-label {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
 
+  span.kontakt-map-label::before {
+    content: "📍";
+  }
+  div.gdzie {
+    height: min-content;
+    position: absolute;
+    bottom: 0px;
+    padding: 0rem;
+    left: 7%;
+    right: 7%;
+    z-index: 1;
+    transform: translateY(1.2rem);
+    min-height: 30dvh;
+  }
+  div.gdzie p {
+    margin-left: 1.4rem;
+  }
+  div.gdzie .vbox {
+    flex-basis: 0.4;
+    flex-grow: 1;
+    padding: 3rem 0rem 3rem 3rem;
+  }
+  div.gdzie div.mapa
+  {
+    flex-grow: 10;
+    flex-basis: 0;
+    border-radius: var(--border-radius);
+    background-color: blue;
+  }
+  section {
+    position: relative;
+    height: 80dvh;
+  }
+  div.hbox {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  div.vbox {
+    display: flex;
+    flex-direction: column;
+  }
+  section.zlotamysl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30dvh;
+    font-size: clamp(1rem, 2dvw,2rem);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  }
+  @media screen and (max-width: 700px) {
+    div.gdzie
+    {
+      height: 7dvh;
+      flex-direction: column;
+    }
+    div.hero {
+      position: absolute;
+      left: 10%;
+      bottom: 25%;
+      width: 80%;
+      top: unset;
+    }
+    img.background {
+      transform: translate(-60%, -8%) scale(4);
+      object-fit: contain;
+    }
+    section {
+      height: 110dvh;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    p, a {
+      font-size: small;
+    }
+  }
 </style>
