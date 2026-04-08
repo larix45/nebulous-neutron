@@ -1,24 +1,12 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import { Icon } from "astro-icon/components";
-import zofiaIBari from "../../assets/zofia_i_bari_na_lawce.jpg";
-import oczyZblizenie from "../../assets/oczyZblizenie.jpg";
+
+import OfertaUklad from "../../components/OfertaUklad.astro";
+
+import background from "../../assets/pielegnacja.jpeg"
 ---
 
-<Layout>
-    <Header />
-    <div>
-        <img id="oczy" src={oczyZblizenie.src} alt="Tlo" />
-        <div>
-            <h3>Pielegnacja psa</h3>
-
-            <span>~ Bez stresu i pośpiechu ~</span>
-        </div>
-    </div>
-    <section>
-        <p>
+<OfertaUklad title="Pielegnacja psa" backgroundImg={{src: background.src}} subtitle="Bez stresu i pośpiechu">
+<p>
             <b>Pielęgnacja</b> jest ważna <b>dla każdego rodzaju szaty</b> - nie tylko
             dla psów ras towarzyszących jak maltańczyki, shih tzu czy cavaliery. Jednak
             taka wizyta może wiązać się z dużym kosztem emocjonalnym dla zwierzęcia.
@@ -64,70 +52,15 @@ import oczyZblizenie from "../../assets/oczyZblizenie.jpg";
             powierzchniami i dźwiękami. <b>Obowiązuje opłata za wynajęcie salonu
             20zł/15min.</b>
         </p>
-    </section>
-    <Footer />
-</Layout>
+</OfertaUklad>
 
 <style>
+    summary {
+        font-weight: 900;
+    }
     strong::before
     {
         content: "📍";
         width: auto;
-    }
-   
-    div {
-        position: relative;
-        height: clamp(10rem, 13dvh, 40rem);
-    }
-    img#oczy {
-        top: 0;
-        position: absolute;
-        height: clamp(10rem, 13dvh, 40rem);
-        width: 100%;
-        object-fit: cover;
-        filter: sepia(0.1) brightness(0.7) contrast(1.1);
-    }
-    h3,
-    span {
-        color: var(--color-text2);
-    }
-    h3 {
-        font-size: 2.4rem;
-    }
-    span {
-        font-size: 1.2rem;
-    }
-    #home {
-        transform: translateY(0.4rem);
-    }
-    div {
-        position: relative;
-    }
-    div > div {
-        position: absolute;
-        top: 0rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        padding: 1rem;
-    }
-    section {
-        padding: clamp(3dvw, 8%, 0dvw);
-        background-color: color-mix(
-            in srgb,
-            var(--color-bg) 90%,
-            var(--color-bg2)
-        );
-    }
-
-    @media screen and (min-width: 800px) {
-        section {
-            min-height: 40rem;
-            display: flex;
-            flex-direction: column;
-            padding: 5% 14%;
-            position: relative;
-            font-size: 1.2rem;
-        }
     }
 </style>

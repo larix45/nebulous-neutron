@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, backgroundImg, subtitle } = Astro.props;
+---
+
+
+
+
+<Layout>
+    <Header />
+    <div>
+        <img src={backgroundImg.src} alt="Tlo" class="background" />
+        <div>
+            <h3>{title}</h3>
+
+            <span>~ {subtitle} ~</span>
+        </div>
+    </div>
+    <section>
+        <slot/>
+    </section>
+    <Footer />
+</Layout>
+
+<style>
+    img {
+        filter: blur(1px) brightness(0.7);
+    }
+
+    div {
+        position: relative;
+        height: clamp(10rem, 35dvh, 40rem);
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem;
+        overflow: auto;
+    }
+    h3,
+    span {
+        color: var(--color-text2);
+        text-shadow: 2px 1px 2px var(--color-bg2);
+    }
+    h3 {
+        font-size: 2.4rem;
+    }
+    span {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: clamp(3dvw, 8%, 0dvw);
+        background-color: color-mix(
+            in srgb,
+            var(--color-bg) 90%,
+            var(--color-bg2)
+        );
+    }
+
+    @media screen and (min-width: 800px) {
+        section {
+            min-height: 40rem;
+            display: flex;
+            flex-direction: column;
+            padding: 5% 14%;
+            position: relative;
+            font-size: 1.2rem;
+        }
+    }
+</style>
