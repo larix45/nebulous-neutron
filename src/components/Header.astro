@@ -16,7 +16,7 @@ import { Icon } from 'astro-icon/components'
     </script>
     
     <a href="/" id="logo_i_tytul">
-        <img src={logo.src} alt="Logo psie talarki">
+        <img id="logo" src={logo.src} alt="Logo psie talarki">
         <div>
             <h1>Pjeski Talarka</h1>
             <h2>Zofia Talarczyk, behawiorystka</h2>
@@ -65,6 +65,10 @@ import { Icon } from 'astro-icon/components'
 </style>
 
 <style>
+header {
+    padding: 1rem;
+}
+
 .dropdown {
     position: relative;
 }
@@ -114,7 +118,7 @@ details[open]summary #chevron {
 
 .dropdown-menu a {
     padding: 0.7rem 1rem;
-    color: inherit;
+    color: var(--color-text);
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -138,16 +142,18 @@ details[open]summary #chevron {
     display: flex;
     gap: 1rem;
 }
-a:hover {
-    scale: 1.01;
-}
 #facebook:hover, #instagram:hover{
     filter:drop-shadow(0.3px 0.3px 0.8px rgb(68, 68, 68));
     scale: 1.1;
 }
 
 #back {
-    background-color: var(--color-bg);
+    /* background-color: var(--color-bg); */
+    background-color: rgb(from var(--color-bg2) r g b / 30%);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    color: var(--color-text2);
+    margin: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -183,7 +189,7 @@ nav {
 #hamburger {
     display: none;
     border: 0px;
-    background-color: inherit;
+    background-color: transparent;
     cursor: pointer;
 }
 h1 {
@@ -196,17 +202,25 @@ h2 {
     font-size: clamp(0.6rem, 0.9dvw, 1rem);
     margin-top: 0;
 }
+a, h1, h2 {
+    color: var(--color-text2);
+}
+#logo {
+    filter: invert();
+}
 
 
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 700px) {
+    a {
+        color: var(--color-text);
+    }
     nav {
         position: fixed;
         right: 10px;
         flex-direction: column;
         background-color: var(--color-bg);
-        
         gap: 3rem;
         top: 5.5rem;
         padding: 2rem;

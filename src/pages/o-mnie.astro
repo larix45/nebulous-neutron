@@ -44,8 +44,9 @@ import oczyZblizenie from "../assets/oczyZblizenie.jpg";
         position: absolute;
         height: clamp(10rem, 13dvh, 40rem);
         width: 100%;
-        object-fit: cover;
-        filter: sepia(0.1) brightness(0.7) contrast(1.1);
+        object-fit:contain;
+        filter: sepia(0.1) brightness(0.7) contrast(1.1) blur(2px);
+        transform: scale(8);
     }
     h3,
     span {

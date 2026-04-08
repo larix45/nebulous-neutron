@@ -28,7 +28,11 @@ const { title, backgroundImg, subtitle } = Astro.props;
 <style>
     img {
         filter: blur(1px) brightness(0.7);
+        object-fit: contain;
+        scale: 3;
+        transform: translateY(-4%);
     }
+    
 
     div {
         position: relative;
@@ -39,7 +43,7 @@ const { title, backgroundImg, subtitle } = Astro.props;
         justify-content: space-around;
         align-items: center;
         padding: 1rem;
-        overflow: auto;
+        /* overflow: auto; */
     }
     h3,
     span {
@@ -54,6 +58,8 @@ const { title, backgroundImg, subtitle } = Astro.props;
     }
 
     section {
+            position: relative;
+
         padding: clamp(3dvw, 8%, 0dvw);
         background-color: color-mix(
             in srgb,

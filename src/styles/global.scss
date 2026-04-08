@@ -231,6 +231,7 @@ img.background {
 a.inactive 
 {
   color: var(--color-shadow);
+  filter: contrast(0.1);
   cursor: not-allowed;
 }
 @media screen and (max-width: 700px) {
