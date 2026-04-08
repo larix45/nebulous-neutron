@@ -6,7 +6,6 @@ import Footer from "../components/Footer.astro";
 import backgroundInu from "../assets/kontakt2.png";
 import { Icon } from "astro-icon/components";
 import { Leaflet, Circle, Popup, Polygon } from "astro-leaflet";
-
 ---
 
 <Layout>
@@ -21,60 +20,60 @@ import { Leaflet, Circle, Popup, Polygon } from "astro-leaflet";
         dobrać najlepsze wsparcie dla Ciebie i Twojego psa.
       </p>
       <div class="kontakt-info">
+
         <div class="hbox">
           <a href="mailto:kontakt@pieskitalarka.com">
-
             <div class="ikona adddark">
-              <Icon name={"mdi:email"} size={32}/>
+              <Icon name={"mdi:email"} size={32} />
             </div>
           </a>
           <div class="vbox">
             <span>Napisz</span>
             <a href="mailto:kontakt@pieskitalarka.com"
-            >kontakt@pieskitalarka.com</a>
+            >kontakt@pieskitalarka.com</a
+            >
           </div>
         </div>
         <div class="hbox">
           <a href="tel:+48570622745">
-          <div class="ikona adddark">
-            <Icon name={"mdi:phone"} size={32}/>
-          </div>
+            <div class="ikona adddark">
+              <Icon name={"mdi:phone"} size={32} />
+            </div>
           </a>
-
-            <div class="vbox">
-              <span>Zadzwoń</span>
-              <a href="tel:+48570622745">+48 570 622 745</a>
+          <div class="vbox">
+            <span>Zadzwoń</span>
+            <a href="tel:+48570622745">+48 570 622 745</a>
           </div>
         </div>
       </div>
     </div>
+
+
     <div class="card gdzie hbox">
       <div class="vbox">
         <div class="hbvox">
           <span class="kontakt-map-label">Gdzie działam?</span>
         </div>
         <p>
-            Obsługuję Katowice oraz okoliczne miejscowości <br> w zaznaczonym obszarze.
-          </p>
+          Obsługuję Katowice oraz okoliczne miejscowości <br /> w zaznaczonym obszarze.
+        </p>
       </div>
-      <div class="mapa">
-        
-      </div>
+      <div class="mapa"></div>
     </div>
   </section>
   <section class="adddark zlotamysl">
     <p>
-      Najlepszy sposób, żeby pomóc swojemu psu, <br> to zrobić pierwszy krok. Napisz
+      Najlepszy sposób, żeby pomóc swojemu psu, <br /> to zrobić pierwszy krok. Napisz
       do mnie!
     </p>
-    <Icon name={"mdi:heart-outline"} size={64} color={"#a78f06"}/>
+    <Icon name={"mdi:heart-outline"} size={64} color={"#a78f06"} />
   </section>
   <Footer />
 </Layout>
 
 <style>
   section {
-     overflow: visible;
+    overflow: visible;
   }
   img.background {
     transform: scale(1.4);
@@ -96,6 +95,12 @@ import { Leaflet, Circle, Popup, Polygon } from "astro-leaflet";
     width: min-content;
     padding: 2rem;
   }
+  .kontakt-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   span.kontakt-map-label {
     font-size: 1.2rem;
     font-weight: 800;
@@ -123,8 +128,7 @@ import { Leaflet, Circle, Popup, Polygon } from "astro-leaflet";
     flex-grow: 1;
     padding: 3rem 0rem 3rem 3rem;
   }
-  div.gdzie div.mapa
-  {
+  div.gdzie div.mapa {
     flex-grow: 10;
     flex-basis: 0;
     border-radius: var(--border-radius);
@@ -138,7 +142,7 @@ import { Leaflet, Circle, Popup, Polygon } from "astro-leaflet";
     display: flex;
     flex-direction: row;
   }
-  
+
   div.vbox {
     display: flex;
     flex-direction: column;
@@ -149,12 +153,11 @@ import { Leaflet, Circle, Popup, Polygon } from "astro-leaflet";
     justify-content: center;
     align-items: center;
     height: 30dvh;
-    font-size: clamp(1rem, 2dvw,2rem);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-size: clamp(1rem, 2dvw, 2rem);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   @media screen and (max-width: 700px) {
-    div.gdzie
-    {
+    div.gdzie {
       height: 7dvh;
       flex-direction: column;
     }
@@ -174,7 +177,8 @@ import { Leaflet, Circle, Popup, Polygon } from "astro-leaflet";
     }
   }
   @media screen and (max-width: 400px) {
-    p, a {
+    p,
+    a {
       font-size: small;
     }
   }
