@@ -14,14 +14,7 @@ import oczyZblizenie from "../assets/oczyZblizenie.jpg";
         <div>
             <h3>O mnie</h3>
 
-            <span
-                ><Icon
-                    id="home"
-                    name="mdi:home-outline"
-                    color={"white"}
-                    size="32px"
-                /> / o mnie</span
-            >
+            <span>~ Pozwolę się przedstawić ~</span>
         </div>
     </div>
     <section>
@@ -33,8 +26,8 @@ import oczyZblizenie from "../assets/oczyZblizenie.jpg";
             Z wykształcenia jestem technikiem weterynarii, więc można
             powiedzieć, że 3w1 :) Sprawdź, jak mogę pomóc Tobie!
         </p>
-        <a href="/oferta">
-            <button>Oferta</button>
+        <a href="/oferta" class="action-call">
+            Oferta
         </a>
         <img id="glowne" src={zofiaIBari.src} alt="Zofia i Bari" />
     </section>
@@ -78,6 +71,12 @@ import oczyZblizenie from "../assets/oczyZblizenie.jpg";
     section {
         padding: clamp(3dvw, 8%, 0dvw);
         background-color: color-mix(in srgb, var(--color-bg) 90%, var(--color-bg2));
+        perspective: 1000px;
+        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
     }
     h4 {
         font-size: 3.5rem;
@@ -91,27 +90,13 @@ import oczyZblizenie from "../assets/oczyZblizenie.jpg";
     img#glowne {
         filter: drop-shadow(3px 3px 1px var(--color-shadow));
         margin-top: 2rem;
+        border-radius: var(--border-radius-small);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        transform-style: preserve-3d;
     }
-    button {
-        border: 0px;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        filter: drop-shadow(0.1px 0.1px 3px rgb(38, 47, 0));
-        width: 60%;
-        font-size: larger;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        /* border: 3px solid var(--color-text2); */
-        color: var(--color-text2);
-        background: color-mix(in srgb, var(--color-primary) 20%, var(--color-bg2));
-        opacity: 0.7;
-        font-weight: 700;
-        transition: all 0.2s ease;
-        cursor: pointer;
-    }
-    button:hover {
-        filter: brightness(0.8);
+    img#glowne:hover {
+        transform: rotateY(7deg) rotateX(5deg) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
     @media screen and (min-width: 800px) {
         img#glowne {
@@ -126,14 +111,29 @@ import oczyZblizenie from "../assets/oczyZblizenie.jpg";
         section {
             min-height: 40rem;
             position: relative;
-        }
-        button {
-            position: absolute;
-            left: 10rem;
-            bottom: calc(10rem - 10dvh);
-            width: clamp(6rem, 10%, 40rem);
+            display: block;
         }
 
     }
      
 </style>
+<script defer>
+    const card = document.querySelector('section');
+    const cardInner = document.querySelector('img#glowne');
+
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left; // Mouse X inside card
+        const y = e.clientY - rect.top;  // Mouse Y inside card
+
+        // Calculate rotation: center is 0,0
+        const rotateX = ((y / rect.height) - 0.5) * 40; // tilt up/down
+        const rotateY = ((x / rect.width) - 0.5) * -40; // tilt left/right
+
+        cardInner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        cardInner.style.transform = 'rotateX(0) rotateY(0)';
+    });
+</script>

@@ -11,12 +11,12 @@ class Review {
 }
 const opinie: Review[] = [
     {
-        author: "Kamil", 
-        content: "polecam", 
-        avatar: "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Blank&hairColor=Blonde&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=PastelRed&graphicType=Skull&eyeType=EyeRoll&eyebrowType=FlatNatural&mouthType=ScreamOpen&skinColor=Tanned"
+        author: "Kamil",
+        content: "polecam",
+        avatar: "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Blank&hairColor=Blonde&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=PastelRed&graphicType=Skull&eyeType=EyeRoll&eyebrowType=FlatNatural&mouthType=ScreamOpen&skinColor=Tanned",
     },
     {
-        author: "Julia", 
+        author: "Julia",
         content: `Zosia nie wciska jednego schematu każdemu. Patrzy na
         konkretnego psa, jego emocje, historię, temperament i
         dopiero wtedy dobiera rozwiązania. Widać, że dobro psa
@@ -27,27 +27,27 @@ const opinie: Review[] = [
         Mądra, świadoma, ciepła, a przy tym konkretna i
         skuteczna. Jeśli ktoś chce naprawdę zrozumieć swojego
         psa i przestać działać metodą prób i błędów – to jest
-        właściwy adres. 10/10, polecam bez zawahania!`, 
+        właściwy adres. 10/10, polecam bez zawahania!`,
         avatar: "https://avataaars.io/?avatarStyle=Circle&topType=LongHairFrida&accessoriesType=Kurt&hairColor=Red&facialHairType=Blank&facialHairColor=Platinum&clotheType=ShirtCrewNeck&clotheColor=Gray01&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Light",
     },
     {
-        author: "Marek", 
+        author: "Marek",
         content: `[MOCK] Zosia to behawiorystka, która naprawdę widzi psa – 
         nie tylko jego zachowanie, ale też emocje, potrzeby i historię. Każde spotkanie 
         to masa wiedzy, ale podanej w bardzo przystępny, życzliwy sposób. Zero oceniania,
         zero presji, za to dużo wsparcia i realnych rozwiązań. Dzięki niej zrozumiałam,
         jak wiele sygnałów mój pies wysyłał, a ja je ignorowałam. Ogromny profesjonalizm
-        i jeszcze większe serce.`, 
+        i jeszcze większe serce.`,
         avatar: "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=MoustacheMagnum&facialHairColor=BlondeGolden&clotheType=BlazerShirt&clotheColor=Black&eyeType=Surprised&eyebrowType=UpDown&mouthType=Grimace&skinColor=Black",
     },
     {
-        author: "Czarek", 
+        author: "Czarek",
         content: `[MOCK] To, co wyróżnia Zosię, to pełne skupienie na psie i
         jego dobrostanie. Nie ma tu presji, pośpiechu ani obietnic cudów.
         Jest za to rzetelna analiza, ogrom wiedzy i niesamowita uważność.
         Zosia potrafi wytłumaczyć nawet trudne rzeczy w prosty sposób,
         dzięki czemu człowiek zaczyna patrzeć na swojego psa zupełnie inaczej.
-        Współpraca z nią to inwestycja w spokojne, mądre życie z psem. Polecam z całego serca.`, 
+        Współpraca z nią to inwestycja w spokojne, mądre życie z psem. Polecam z całego serca.`,
         avatar: "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Kurt&hairColor=Blonde&facialHairType=BeardMajestic&facialHairColor=Brown&clotheType=ShirtScoopNeck&clotheColor=PastelRed&eyeType=Cry&eyebrowType=AngryNatural&mouthType=ScreamOpen&skinColor=Tanned",
     },
     {
@@ -70,52 +70,86 @@ const opinie: Review[] = [
         ciepłem i spokojem. Polecam każdemu, kto chce budować relację, a nie tresować.`,
         avatar: "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairFrizzle&accessoriesType=Prescription01&hairColor=Auburn&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=ShirtCrewNeck&clotheColor=Gray01&eyeType=Surprised&eyebrowType=Angry&mouthType=Default&skinColor=Brown",
     },
-    
-    ];
+];
 ---
 
 <section>
     <h3>Co mówią o mnie inni:</h3>
     <div class="swiper">
         <div class="swiper-wrapper">
-            { opinie.map((opinia: Review) => (
-                <div class="swiper-slide">
-                    <div id="card_opinie">
-                        <span>
-                            <img src={opinia.avatar} alt="ikona uzytkownika">
-                            <div>
-                                <h4>{opinia.author}</h4>
-                                <span>
-                                    <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
-                                    <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
-                                    <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
-                                    <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
-                                    <Icon name="mdi:star" color={"yellow"} size="1.2rem" />
-                                </span>
-                            </div>
-                        </span>
-                        <p>
-                            {opinia.content}
-                        </p>
+            {
+                opinie.map((opinia: Review) => (
+                    <div class="swiper-slide">
+                        <div class="card_opinie card">
+                            <span>
+                                <img
+                                    src={opinia.avatar}
+                                    alt="ikona uzytkownika"
+                                />
+                                <div>
+                                    <h4>{opinia.author}</h4>
+                                    <span>
+                                        <Icon
+                                            name="mdi:star"
+                                            color={"yellow"}
+                                            size="1.2rem"
+                                        />
+                                        <Icon
+                                            name="mdi:star"
+                                            color={"yellow"}
+                                            size="1.2rem"
+                                        />
+                                        <Icon
+                                            name="mdi:star"
+                                            color={"yellow"}
+                                            size="1.2rem"
+                                        />
+                                        <Icon
+                                            name="mdi:star"
+                                            color={"yellow"}
+                                            size="1.2rem"
+                                        />
+                                        <Icon
+                                            name="mdi:star"
+                                            color={"yellow"}
+                                            size="1.2rem"
+                                        />
+                                    </span>
+                                </div>
+                            </span>
+                            <p>{opinia.content}</p>
+                            <button class="badge">Czytaj wiecej</button>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))
+            }
         </div>
 
         <div class="swiper-pagination"></div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <dialog id="opinia-dialog">
+        <div id="dialog-content">
+            <p></p>
+            <button id="close-dialog" class="badge">Zamknij</button>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+    </dialog>
 </section>
 
 <script>
     import Swiper from "swiper";
-    import { Autoplay, Mousewheel, Navigation, Pagination } from "swiper/modules";
+    import {
+        Autoplay,
+        Mousewheel,
+        Navigation,
+        Pagination,
+    } from "swiper/modules";
 
     new Swiper(".swiper", {
         modules: [Navigation, Pagination, Mousewheel, Autoplay],
         loop: true,
-        centeredSlides:true,
+        centeredSlides: true,
         slidesPerView: 1,
         speed: 600,
         autoplay: {
@@ -147,12 +181,81 @@ const opinie: Review[] = [
                 slidesPerView: 3,
                 spaceBetween: 30,
             },
+        },
+    });
+    // Detect overflow and toggle "Czytaj więcej"
+    document.querySelectorAll(".card_opinie").forEach((card) => {
+        const p = card.querySelector("p");
+        const btn = card.querySelector("button");
 
+        // hide button if no overflow
+        if (p.scrollHeight <= p.clientHeight) {
+            btn.style.display = "none";
         }
+
+        // open dialog with full text
+        btn.addEventListener("click", () => {
+            const dialog = document.querySelector("#opinia-dialog");
+            dialog.querySelector("p").textContent = p.textContent;
+            dialog.showModal();
+            document.body.classList.add("blurred");
+        });
+    });
+
+    // close dialog
+    document.querySelector("#opinia-dialog")?.addEventListener("cancel", () => {
+        const dialog = document.querySelector("#opinia-dialog");
+        dialog?.close();
+        document.body.classList.remove("blurred");
+    });
+    document.querySelector("#close-dialog")?.addEventListener("click", () => {
+        const dialog = document.querySelector("#opinia-dialog");
+        dialog?.close();
+        document.body.classList.remove("blurred");
     });
 </script>
 
 <style>
+    /* Blur background when dialog is open */
+    body.blurred section,
+    body.blurred header,
+    body.blurred footer {
+        filter: blur(10px);
+        transition: filter 0.2s ease;
+    }
+
+    /* Dialog styling */
+    dialog {
+        max-width: 40rem;
+        width: 90%;
+        border-radius: var(--border-radius);
+    }
+
+    dialog::backdrop {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+    }
+
+    .dialog-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .dialog-content p {
+        max-height: 60vh;
+        overflow-y: auto;
+        line-height: 1.4;
+        font-size: larger;
+    }
+
+    #close-dialog {
+        align-self: flex-end;
+        padding: 0.4rem 1rem;
+        cursor: pointer;
+    }
+
+    
     .swiper {
         width: 80%;
         height: 100%;
@@ -164,9 +267,9 @@ const opinie: Review[] = [
         --swiper-pagination-color: var(--color-text2);
         --swiper-navigation-color: var(--color-text2);
     }
-    .swiper-button-prev, .swiper-button-next 
-    {
-        color:var(--color-text2);
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: var(--color-text2);
         position: absolute;
     }
     .swiper-button-next {
@@ -203,52 +306,70 @@ const opinie: Review[] = [
         gap: 1.8rem;
         position: relative;
     }
-    #card_opinie img {
+    .card_opinie img {
         aspect-ratio: 1;
         height: 3rem;
     }
-    #card_opinie span {
+    .card_opinie span {
         align-self: flex-start;
         display: flex;
         gap: 0rem;
     }
-    #card_opinie div {
+    .card_opinie div {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
     }
-    #card_opinie {
-        background-color: color-mix(in srgb, var(--color-bg) 90%, black);
-        color: var(--color-text);
-        padding: 1rem;
-        border-radius: 0.5rem;
+    .card_opinie p {
+        flex-grow: 1;
+        position: relative;
+        /* max-height: 8rem; or whatever height you want */
+        overflow: hidden;
+        mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            black 70%,
+            transparent 100%
+        );
+    }
+    button {
+        width: 100%;
+        cursor: pointer;
+    }
+    button:hover {
+        outline: 3px solid var(--color-primary);
+        transition: all 0.08s ease;
+    }
+    .card_opinie {
         width: clamp(10rem, 30dvw, 25rem);
-        height: clamp(20rem, 45dvh, 45rem);;
-        display: flex;
-        gap: 0.2rem;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        height: clamp(20rem, 45dvh, 45rem);
         margin-top: 2rem;
         font-size: small;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
     }
     @media screen and (max-width: 600px) {
-        .swiper-button-prev, .swiper-button-next {
+        button {
+            padding: 0rem 1rem;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
             display: none;
         }
         .swiper {
             width: 100%;
         }
-        #card_opinie {
+        .card_opinie {
             width: 90%;
             height: fit-content;
         }
     }
     @media screen and (max-width: 1200px) {
-        #card_opinie {
+        .card_opinie {
             width: 70%;
             height: fit-content;
         }
-
     }
 </style>

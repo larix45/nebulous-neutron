@@ -2,16 +2,46 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Header/>
-    <h2>
-        <span>TEST KONTAKT</span>
-    </h2>
-	<Footer/>
+  <Header />
+  <main class="kontakt-container">
+    <section class="kontakt-hero">
+      <img class="kontakt-bg" src="/logo2.png" alt="Piesek" />
+      <div class="card">
+        <span class="kontakt-badge">KONTAKT</span>
+        <h2>Jak się skontaktować?</h2>
+        <p>Napisz do mnie lub zadzwoń – chętnie odpowiem na Twoje pytania i pomogę dobrać najlepsze wsparcie dla Ciebie i Twojego psa.</p>
+        <div class="kontakt-info">
+          <div>
+            <span class="kontakt-label">Napisz</span>
+            <a href="mailto:kontakt@pieskitalarka.com">kontakt@pieskitalarka.com</a>
+          </div>
+          <div>
+            <span class="kontakt-label">Zadzwoń</span>
+            <a href="tel:+48570622745">+48 570 622 745</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="kontakt-map-section">
+      <div class="kontakt-map-card">
+        <div>
+          <span class="kontakt-map-label">Gdzie działam?</span>
+          <p>Obsługuję Katowice oraz okoliczne miejscowości w zaznaczonym obszarze.</p>
+        </div>
+        <img class="kontakt-map" src="/styles/mapa_katowice.png" alt="Mapa Katowic" />
+      </div>
+    </section>
+    <section class="kontakt-footer-text">
+      <p>Najlepszy sposób, żeby pomóc swojemu psu, to zrobić pierwszy krok. Napisz do mnie!</p>
+      <span class="kontakt-heart">♡</span>
+    </section>
+  </main>
+  <Footer />
 </Layout>
+
+<style>
+
+</style>

@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Icon } from 'astro-icon/components';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<Header/>
+		<section>
+			<img src="https://picsum.photos/1200/900" class="background">
+			<div class="card effect">
+				<span class="badge">
+					Odznaka
+				</span>
+				<div class="ikona">
+					<Icon name={"mdi:phone"} size={"2rem"}/>
+				</div>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi blanditiis dolorum officiis incidunt enim impedit, temporibus alias modi, distinctio ullam possimus hic praesentium ipsa illo aperiam libero obcaecati quidem non?</p>
+			</div>
+			<div class="card">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil enim eligendi distinctio modi iste quasi non quisquam voluptatum fugit, minus, ab recusandae impedit dolores rem eius fuga officiis sapiente ipsum?
+			</div>
+
+				<a href="" class="action-call">
+					Przycisk
+				</a>
+				<a href="" class="inactive">
+					Przycisk
+				</a>
+
+		</section>
+	<Footer/>
+</Layout>
+
+<style>
+	section {
+		background-color: rgb(102, 102, 102);
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		padding: 2rem;
+		position: relative;
+		overflow: hidden;
+	}
+
+</style>

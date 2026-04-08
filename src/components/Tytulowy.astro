@@ -6,9 +6,9 @@ import Image from 'astro/components/Image.astro';
 ---
 
 <section>
-    <img id="image2" alt={bari.format} src={bari.src}>
+    <img class="background" alt={bari.format} src={bari.src}>
     <img id="image" alt={zofiaIBari.format} src={zofiaIBari.src}/>
-    <div id="card">
+    <div class="card">
         <h2>Cześć, miło cię widzieć!</h2>
         <p>Nazywam się Zofia Talarczyk i jestem certyfikowaną trenerką i behawiorystką psów. 
             Już od 2021 roku aktywnie dzielę się wiedzą dotyczącą psów w mediach społecznościowych,
@@ -21,94 +21,55 @@ import Image from 'astro/components/Image.astro';
          przyjaciół oraz budowaniu poczucia bezpieczeństwa tak, żeby pies robił coś,
          bo ufa swojemu przewodnikowi, a nie dlatego, że się go boi. </p>
         <p>Odezwij się do mnie i zobacz, jak mogę Tobie pomóc!</p>        
-        <button>OFERTA</button>
+        <a href="/oferta" class="action-call">OFERTA</a>
     </div>
 </section>
 
 <style>
     p {
-        font-size: clamp(0.9rem, 1vw, 1.3rem);
+        font-size: small;
     }
 
     #image {
-        max-height: 100%;
-        height: 90%;
+        height: 84%;
         width: auto;
         position: absolute;
-        right: 20%;        
+        right: 8%;        
         bottom: 0rem;
     }
-    #image2 {      
+    img.background {      
         filter:blur(6px) contrast(0.8) brightness(0.425);
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
     }
     section {
         height: clamp(10rem, 85dvh, 40rem);
         width: 100%;
         position: relative;
-        background-color: black;
+        display: flex;
+        background-color: transparent;
         filter:drop-shadow(1px 1px 3px var(--color-shadow));
     }
-    #card {
+    .card {
         position: absolute;
-        top: 3%;
-        left: clamp(1rem, 8vw, 20rem);
-        background-color: var(--color-bg2);
-        color: var(--color-text2);
-        border-radius: 0.5rem;
-        padding: 1rem;
-        filter: drop-shadow(1px 1px 4px color-mix(in srgb, var(--color-shadow) 30%, black)) opacity(0.9);
-        width: clamp(25rem, 40%, 50rem);
-        display: flex;
-        flex-direction: column;
-        max-height: 90%;
+        top: 2rem;
+        left: 8%;
+        gap: 0.1rem;
+        width: clamp(25rem, 50%, 50rem);
+        max-height: calc(100% - 4rem);
     }
-    button {
-        border: 0px;
-        color: var(--color-text2);
-        background-color: var(--color-primary);
-        padding: 1rem;
-        border-radius: 0.5rem;
-        filter: drop-shadow(0.1px 0.1px 3px rgb(38, 47, 0));
-        max-width: 15rem;
-        font-size: larger;
-        position: relative;
+    a.action-call {
         left: 50%;
         transform: translateX(-50%);
-        border: 1px solid var(--color-primary);
-        color: var(--color-primary);
-        background: color-mix(in srgb, var(--color-primary) 27%, black);
-        opacity: 0.7;
-        font-weight: 700;
-        transition: all 0.2s ease;
-    }
-    button:hover {
-        cursor: pointer;
-        background: var(--color-primary);
-        color: #fff;
     }
 
     @media screen and (max-width: 950px) {
         #image {
-            right: 10%;
-            height: auto;
+            right: 0%;
         }
-        section {
-            height: 44rem;
-        }
-        /* #card {
-            width: 80%;
-            bottom: 1%;
-            justify-content: end;
-        } */
-        #card {
-            filter: drop-shadow(1px 1px 4px var(--color-shadow)) opacity(0.95);
-            display: block;
-            position: absolute;
-            bottom: 2rem;
-            top: auto;
+        .card {
+            width: 53%;
+            height: min-content;
+            bottom: 1rem;
+            padding: 0.5rem;
         }
     }
     @media screen and (max-width: 600px) {
@@ -117,35 +78,22 @@ import Image from 'astro/components/Image.astro';
             max-width: 100%;
             height: auto;
         }
-        #card {
-            filter: drop-shadow(1px 1px 4px var(--color-shadow)) opacity(0.95);
-            display: block;
-            position: absolute;
-            bottom: 2rem;
-            top: auto;
-        }
         section {
-            align-items:end;
-            justify-content: flex-end;
-            display: flex;
+            height: 110dvh;
+        }
+        .card {
+            padding: 1rem;
+            top: auto;
+            width: 92%;
+            left: 4%;
+            align-self: center;
         }
     }
     @media screen and (max-width: 480px) {
-        button {
-            font-size: small;
-            width: 100%;
-        }
-        p {
-            font-size: smaller;
-        }
         #image {
-            top: 0px;
-        }
-        #card {
-            overflow-y: auto;
-            height: fit-content;
-            width: fit-content;
-            left: 0;
+            left: 1px;
+            bottom: 20dvh;
+            max-height: 100%;
         }
     }
 </style>
